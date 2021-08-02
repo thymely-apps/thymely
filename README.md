@@ -162,3 +162,68 @@ How often will you merge?
 
 How will you communicate that it’s time to merge?
 - We'll have open pull requests that we'll merge during our review meetings
+
+
+#USER STORIES
+** Thrill Level Selection
+As a user I would like to select my thrill level  so I can find a ride that suits my taste!
+
+Feature Tasks
+- User can choose between 3 thrill levels from a drop down menu.
+- Save user selection to persistence 
+- Based on user selection, show appropriate rides or restaurants/shops. 
+
+Acceptance Tests
+- Results should be filtered based on input of thrill level selection.
+- Results should be displayed on the Results Page.
+- Drop down should show 3 Selections to choose from.
+
+
+Activity Level Selection
+As a user I would like to select my Activity Level  so I can plan appropriately!
+Feature Tasks
+- User can choose between 3 Activity Levels from a drop down menu.
+- Save user selection to persistence 
+- Based on user selection, show appropriate rides or restaurants/shops
+
+Acceptance Tests
+- Results should be filtered based on input of Activity Level selection.
+- Results should be displayed on the Results Page.
+- Drop down should show 3 Selections to choose from.
+
+Results Page
+As a user I would like my suggested option to display on their own page  so I can have a
+plan.
+
+Feature Tasks
+Render 3 Results to the page.
+Show the title and description to each image.
+Show results summary.
+Acceptance Tests
+Results should show one restaurant or shop relevant to users input selection.
+Results should show two rides relevant to users input selection.
+Each Result should have a title and short description of activity.
+Should show Results description of Adventure Journey on results page.
+
+About Page
+As a user I would like to be able to visit an About Page  so I can learn about the creators.
+
+Feature Tasks
+User can view a photo each Creator
+Show a name and short bio of each creator.
+
+Acceptance Tests
+Should show 4 images of creators
+Should show 1 bio for each creator
+Should show creators name
+Should show a title 
+
+
+Results Set
+As a user I would like to see 2 unique rides  so I can diversify my adventure!
+
+Feature Tasks
+Show 2 unique rides
+Give user option to refresh page with new results
+Acceptance Tests
+Two unique rides should render to the page 
