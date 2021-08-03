@@ -1,0 +1,49 @@
+/* --------------------------Global Styling ----------------------------*/
+
+*{
+  box-sizing: border-box;
+}
+
+
+/* -----------------------------------Header----------------------------*/
+
+header {
+  height:200px;
+}
+
+#thymley-navlinks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+#thymley-navlinks h3 {
+  font-size: 150%;
+  color:grey;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#thymley-navlinks nav{
+  font-size: 100%;
+  letter-spacing: 1px;
+  width: 400px;
+  text-align: center;
+}
+
+#thymley-navlinks a{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+
+
+
+/* ------------------------------Main -----------------------------------*/
+
+
+
+/* ------------------------------Footer ---------------------------------*/
