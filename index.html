@@ -5,13 +5,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Home</title>
 </head>
 
 <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <header>
+    <h3>THYMLEY</h3>
+    <nav>
+      <a href="">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="">SCHEDULE</a>
+      <a href="">SHOP</a>
+    </nav>
+    <div>
+      <img src="" alt="Thymley Logo">
+      <h2>DISNEYLAND RESORT, CALIFORNIA</h2>
+      <h1>Thymley Adventures</h1>
+    </div>
+  </header>
+  <main>
+    <Section>
+      <div id="thymley-intro">
+        <h2>sub-heading here</h2>
+        <h1>Experience Disneyland</h1>
+        <P>Welcome to our site. Here is what you do!</P>
+        <img src="" alt="Disney Photo or Video"> 
+      </div>
+      <div id="thymley-form">
+        <h1>Choose Your Adventure</h1>
+        <form>
+          <fieldset>
+            <label>Thrill Level
+              <select name="thrill-level">
+                <option value="high">High</option>
+                <option value="moderate">Moderate</option>
+                <option value="low">Low</option>
+              </select>
+            </label>
+            <label>Activity Level
+              <select name="activity-level">
+                <option value="high">High</option>
+                <option value="moderate">Moderate</option>
+                <option value="low">Leisurely</option>
+              </select>
+            </label>
+          </fieldset>
+        </form>
+        <button type="submit">Find your Adventure</button>
+      </div>
+    </Section>
+  </main>
+  <footer>
+    <nav>
+      <a href="">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="">SCHEDULE</a>
+      <a href="">SHOP</a>
+    </nav>
+  </footer>
   <script src="./js/Activity.js"></script>
   <script src="./js/ActivityRepository.js"></script>
   <script src="./js/Result.js"></script>
