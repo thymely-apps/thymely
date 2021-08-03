@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 
+body{
+  background-repeat: no-repeat;
+  background-image: url("");
+  background-attachment: scroll;
+  background-position: top;
+}
 
 /* -----------------------------------Header----------------------------*/
 
 header {
-  height:200px;
+  height:500px;
 }
 
 #thymley-navlinks {
@@ -21,17 +27,19 @@ header {
 }
 
 #thymley-navlinks h3 {
-  font-size: 150%;
-  color:grey;
-  font-weight: 800;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+  font-weight: 800;
+  color:grey;
 }
 
 #thymley-navlinks nav{
-  font-size: 100%;
-  letter-spacing: 1px;
   width: 400px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  letter-spacing: 1px;
+ 
 }
 
 #thymley-navlinks a{
@@ -39,11 +47,165 @@ header {
   padding-right: 3%;
 }
 
+#thymley-herotitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+#thymley-herotitle img{
+  width:120px;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
 
+#thymley-herotitle h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  margin-bottom: 1%;
+  letter-spacing: 1px;
+}
 
-/* ------------------------------Main -----------------------------------*/
+#thymley-herotitle h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 350%;
+  font-weight: 600;
+  margin-bottom: 15%;
+}
 
+/* ----------------------------Index.html Main ---------------------------------*/
+
+main {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+/* need to give this an ID*/
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#thymley-intro, #thymley-form {
+  width: 45%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+#thymley-intro h2 {
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  margin-bottom: 1%;
+  letter-spacing: 1px;
+}
+
+#thymley-intro h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+}
+
+#thymley-intro p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 170%;
+  margin-top: 6%;;
+  margin-bottom: 6%;
+}
+
+#thymley-intro img{
+  border: gray  solid 4px;
+}
+
+#thymley-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#thymley-form h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+  margin-top: 4%;
+  margin-bottom: 6%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+fieldset {
+  width: 360px;
+  border: 4px solid grey;
+  border-radius: 8px;
+  padding:40px;
+  text-align: left;
+}
+
+select {
+  font-size: 15pt;
+  width: 80%;
+  border-radius: 8px;
+  padding: 5px;
+  display: block;
+  margin-bottom: 16px;
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15pt;
+  margin-left: 10%;
+}
+
+button {
+  border: 4px solid grey;
+  border-radius: 8px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 40%;
+}
 
 
 /* ------------------------------Footer ---------------------------------*/
+
+footer {
+  background-color: grey;
+  height:200px;
+  display: flex;
+  align-items: center;
+}
+
+ footer nav{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline;
+  color: white;
+  font-size: 100%;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+footer nav a{
+  padding-left: 3%;
+  padding-right: 3%;
+}
