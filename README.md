@@ -1,3 +1,9 @@
+# Thymely Apps - Team Members
+- Marquesa Asmussen
+- Sarah Creager
+- Alex Grazda
+- Joe Ivans
+
 # Team Agreement
 
 ## Cooperation Plan
