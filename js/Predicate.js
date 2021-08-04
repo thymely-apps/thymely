@@ -1,21 +1,40 @@
 'use strict';
 
-const Predicate = function () {
-  /** @type {Activity[]} */
-  this.activities = []; // TODO: turn this into a repository
+/**
+ *
+ * @param {string} franchise
+ * @param {string} thrillLevel
+ * @param {string} activityLevel
+ * @constructor
+ */
+const Predicate = function(
+    franchise,
+    thrillLevel,
+    activityLevel) {
 
-  /**
-   * 
-   * @param {*} myPredicate 
-   */
-  Predicate.prototype.applyFilter = function (myPredicate) {
-    // use the predicate to filter the activies
-    // the activities they'll be coming form the activity repository
+  this.franchise = franchise;
+  this.thrillLevel = thrillLevel;
+  this.activityLevel = activityLevel;
 
-    if (myPredicate) {
-      // do something
-    } else {
-      // do something else
-    }
-  }
-}
+  Predicate.prototype = {
+    /**
+     * @param {Activity[]} activities
+     * @returns {boolean}
+     */
+    filter: function(activities) {
+      // check franchise
+      let franchise = activities.filter(
+          activity => activity.franchise === this.franchise).length > 0;
+
+      // check thrillLevel
+      let thrillLevel = activities.filter(
+          activity => activity.thrillLevel === this.thrillLevel).length > 0;
+
+      // check activityLevel
+      let activityLevel = activities.filter(
+          activity => activity.activityLevel === this.activityLevel).length > 0;
+
+      return franchise && thrillLevel && activityLevel;
+    },
+  };
+};
