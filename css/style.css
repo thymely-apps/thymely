@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 
-body{
-  
+main {
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 /* -----------------------------------Header----------------------------*/
@@ -13,9 +14,10 @@ body{
 header {
   height:700px;
   background-repeat: no-repeat;
-  background-image: url("../docs/images/disney-background-img.jpg");
-  background-attachment: scroll;
+  background-image: url("../img/disney-background-img.jpg");
   background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
 }
 
 #thymely-navlinks {
@@ -71,7 +73,7 @@ header {
   font-size: 90%;
   margin-bottom: 1%;
   letter-spacing: 1px;
-  color: #A88678;
+  color: #DD5844;
 }
 
 #thymely-herotitle h1{
@@ -85,13 +87,9 @@ header {
 
 /* ----------------------------Index.html Main ---------------------------------*/
 
-main {
-  margin-left: 6%;
-  margin-right: 6%;
-}
 
-/* need to give this an ID*/
-section {
+
+#thymely-sectionone {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -101,9 +99,9 @@ section {
 }
 
 #thymely-intro, #thymely-form {
-  width: 45%;
-  margin-left: 4%;
-  margin-right: 4%;
+  width: 40%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 #thymely-intro h2 {
@@ -123,12 +121,14 @@ section {
 #thymely-intro p {
   font-family: 'Montserrat', sans-serif;
   font-size: 170%;
-  margin-top: 6%;;
+  margin-top: 6%;
   margin-bottom: 6%;
 }
 
 #thymely-intro img{
-  border: gray  solid 4px;
+  width: 100%;
+  border: 8px solid #38326A;
+  border-radius: 8px;
 }
 
 #thymely-form {
@@ -157,48 +157,183 @@ fieldset {
   width: 360px;
   border: 8px solid #38326A;
   border-radius: 8px;
-  padding:40px;
+  padding:50px;
   text-align: left;
   background-color: #6F62D0;
 }
 
 select {
-  font-size: 15pt;
-  width: 80%;
+  font-size: 20pt;
+  width: 90%;
   border-radius: 8px;
   padding: 5px;
   display: block;
-  margin-bottom: 30px;
-  margin-top: 6%;
+  margin-bottom: 8%;
+  margin-top: 8%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Montserrat', sans-serif;
 }
 
+select:focus, select:hover {
+  background: #cbc4ff;
+}
+
 label {
   font-family: 'Oswald', sans-serif;
-  font-size: 20pt;
-  margin-left: 30px;
+  font-size: 25pt;
+  margin-left: 15px;
+  color: #242043;
 }
 
 button {
-  border: 8px solid #6A404C;
-  background-color: #F5C3AE;
-  color: black;
+  border: 8px solid #5E251D;
+  background-color: #EA8D58;
+  color: #5E251D;
   border-radius: 8px;
   padding: 8px 20px;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   font-size: 18pt;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+  width: 30%;
+}
+
+button:focus, button:hover {
+  background: #F5C3AE;
+}
+
+/* ----------------------------about.html ---------------------------------*/
+
+
+#thymely-about-section {
   width: 40%;
+  margin-left: 6%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#thymely-about-section h2 {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 90%;
+  margin-bottom: 1%;
+  letter-spacing: 1px;
+  margin-left: 2.5%;
+}
+
+#thymely-about-section h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+  margin-left: 2%;
+}
+
+#thymely-about-articles {
+  width: 210%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15%;
+}
+
+#thymely-about-articles img {
+  width: 85%;
+  border: 8px solid #38326A;
+  border-radius: 8px; 
+  margin-left: 10%;
+  margin-right:10%;
+  
+}
+
+#thymely-about-articles h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 200%;
+  font-weight: 600;
+  margin-top: 10%;
+  margin-bottom: 4%;
+  margin-left: 11%;
+}
+
+#thymely-about-articles p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 130%;
+  margin-top: 6%;
+  margin-left: 11%;
+  
+}
+
+/* ----------------------------results.html ---------------------------------*/
+
+#thymely-results-page {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#thymely-results-page div{
+  width: 40%;
+  margin-left: 8%;
+  margin-right: 2%;
+  height: 60%;
+}
+
+#thymely-results-page h3 {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 90%;
+  margin-bottom: 1%;
+  letter-spacing: 1px;
+  margin-left: 2.5%;
+}
+
+#thymely-results-page h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 250%;
+  font-weight: 600;
+  margin-left: 2%;
+  margin-bottom: 4%;
+  margin-top: 6%;
+  letter-spacing: 1px;
+}
+
+#thymely-results-page img {
+  width: 60%;
+}
+#thymely-results-page h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+  margin-left: 2%;
+}
+
+#thymely-results-page p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 150%;
+  margin-top: 6%;;
+  margin-bottom: 8%;
+  margin-left: 2%;
+}
+
+#thymely-results-page button{
+  margin-bottom: 10%;
+  margin-top: 8%;
 }
 
 /* ------------------------------Footer ---------------------------------*/
 
 footer {
-  background-color: #8B999A; 
+  background-color: #374197; 
   height:200px;
   display: flex;
   align-items: center;
@@ -208,7 +343,6 @@ footer nav{
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   display: inline;
-  color: white;
   font-size: 100%;
   letter-spacing: 1px;
   display: flex;
@@ -218,4 +352,9 @@ footer nav{
 footer nav a{
   padding-left: 3%;
   padding-right: 3%;
+  color: #CFA593;
+}
+
+footer a:hover {
+  color: #EA8D58;
 }
