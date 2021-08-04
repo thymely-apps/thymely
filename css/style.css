@@ -15,8 +15,9 @@ header {
   height:700px;
   background-repeat: no-repeat;
   background-image: url("../docs/images/disney-background-img.jpg");
-  background-attachment: scroll;
   background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
 }
 
 #thymely-navlinks {
