@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+  <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
+  <link href="https://code.jquery.com/qunit/qunit-2.16.0.css" rel="stylesheet">
+  <title>Test Suite</title>
+</head>
+
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./testsuite.html">Test Suite</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</main>
+
+<footer>
+  <div id="thymely-testsuite-imports">
+    <!-- IMPORTS -->
+
+    <!-- tests -->
+    <script src="../js/tests/ActivityTests.js"></script>
+    <script src="../js/tests/CommonLibTests.js"></script>
+    <script src="../js/tests/PredicateTests.js"></script>
+    <script src="../js/tests/RepositoryTests.js"></script>
+    <script src="../js/tests/ResultManagerTests.js"></script>
+    <script src="../js/tests/ResultTests.js"></script>
+    <script src="../js/tests/TeamMemberTests.js"></script>
+    <script src="../js/tests/TestLib.js"></script>
+    <script src="../js/tests/TestHarness.js"></script>
+
+    <!-- libraries -->
+    <script src="../js/CommonLib.js"></script>
+
+    <!-- domain models -->
+    <script src="../js/TeamMember.js"></script>
+    <script src="../js/Activity.js"></script>
+    <script src="../js/Predicate.js"></script>
+    <script src="../js/Result.js"></script>
+
+    <!-- repositories -->
+    <script src="../js/Repository.js"></script>
+    <script src="../js/ActivityRepository.js"></script>
+    <script src="../js/ResultRepository.js"></script>
+
+    <!-- orchestrators -->
+    <script src="../js/ResultManager.js"></script>
+  </div>
+</footer>
+</body>
+
+</html>

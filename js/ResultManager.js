@@ -25,7 +25,9 @@ const ResultManager = function(
      * @param {integer} quantity
      */
     generateResults: function(quantity) {
-      getResult();
+      for (let i = 0; i < quantity; i++) {
+        getResult();
+      }
     },
 
     rejectFromResults: function() {

@@ -15,24 +15,55 @@ const CommonLib = {
   Array: {
     /**
      * @param {*[]} source
-     * @param {*[]}target
+     * @param {*[]} target
      * @returns {boolean}
      */
     contains: (source, target) => source.indexOf(target) > -1,
 
     /**
      * @param {*[]} source
-     * @param {*[]}target
+     * @param {*[]} target
      * @returns {number}
      */
     indexOf: (source, target) => source.indexOf(target),
   },
 
   Event: {
-    attachListener: function() {
+
+    /**
+     * @param {HTMLElementEventMap[string]} event
+     * @returns {function(event:HTMLElementEventMap[string]) : void}
+     */
+    getSubmitButtonClickDelegate: {
+      function(event) {
+        event.preventDefault();
+
+        // todo: get result from form
+        // event.target.;
+        // todo: generate results
+        result = new Result(a, b, c);
+        // todo: store results in local storage
+        // redirect
+        window.location.assign(window.location.href + '/results.html');
+      },
     },
 
-    removeListener: function() {
+    /**
+     * @param {string} domElementId
+     * @param {function(event:HTMLElementEventMap[string]) : void} actionDelegate
+     */
+    attachClickListener: function(domElementId, actionDelegate) {
+      const target = document.getElementById(domElementId);
+      target.addEventListener('click', actionDelegate);
+    },
+
+    /**
+     * @param {string} domElementId
+     * @param {function(event:HTMLElementEventMap[string]) : void} actionDelegate
+     */
+    removeClickListener: function(domElementId, actionDelegate) {
+      const target = document.getElementById(domElementId);
+      target.removeEventListener('click', actionDelegate);
     },
   },
 
@@ -56,13 +87,15 @@ const CommonLib = {
   },
 
   Random: {
+
     /**
-     * @param {number} min
-     * @param {number} max
+     * @param {int} min
+     * @param {int} max
      * @returns {number}
      */
-    getRandomIntInclusive: (min, max) =>
-        Math.floor(
-            Math.random() * (max - min + 1) + min),
+    getRandomIntInclusive: function(min, max) {
+      return Math.floor(
+          Math.random() * (max - min + 1) + min);
+    },
   },
 };

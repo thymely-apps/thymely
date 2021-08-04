@@ -2,8 +2,9 @@
 
 /* Application Driver Class */
 
-// The activity repository contains a ton of activities
-// We're going to filter them based on "criteria", a.k.a. predicate
-//  --> applyFilter(activityLevel, thrillLevel)
-// The activity repository might have the the filter as a prototype method.
-const activityRepository = new ActivityRepository('');
+const activityRepository = new ActivityRepository();
+const resultRepository = new ResultRepository();
+
+CommonLib.Event.attachClickListener(
+    '',
+    CommonLib.Event.submitButtonClickDelegate);
