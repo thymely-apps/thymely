@@ -14,7 +14,7 @@ main {
 header {
   height:700px;
   background-repeat: no-repeat;
-  background-image: url("../docs/images/disney-background-img.jpg");
+  background-image: url("../img/disney-background-img.jpg");
   background-position: top;
   background-attachment: fixed;
   background-size: 100%;
