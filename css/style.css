@@ -33,28 +33,42 @@ header {
   font-family: 'Oswald', sans-serif;
   font-size: 150%;
   font-weight: 800;
-  color:#F5C3AE;
+  color:#efac90;
+  transition:color 0.3s ease;
+  transition: transform 1s;
+}
+
+#thymely-navlinks h3:hover {
+  color: #F5C3AE;
+  transform: scale(1.3);
 }
 
 #thymely-navlinks nav{
-  width: 400px;
+  width: 500px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 100%;
   letter-spacing: 1px;
-  
 }
 
 #thymely-navlinks a{
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding-left: 1%;;
+  padding-right: 1%;;
+  padding-top: 1%;
+  padding-bottom: 1%;
   color:#CFA593;
+  transition:all 0.3s ease;
 }
 
 #thymely-navlinks a:hover {
-  color: #EA8D58;
+  color: #e8e1de;
+  border: 8px solid #DD5844;
+  border-radius: 8px;
+  background-color: #DD5844;
 }
-
+     
 #thymely-herotitle {
   display: flex;
   flex-direction: column;
@@ -66,6 +80,14 @@ header {
   width:120px;
   margin-top: 2%;
   margin-bottom: 1%;
+  opacity:1;
+  transition:opacity 0.3s ease-in-out;
+  transition: transform 1s;
+}
+
+#thymely-herotitle img:hover {
+  opacity: .7;
+  transform: scale(1.3);
 }
 
 #thymely-herotitle h2{
@@ -74,6 +96,13 @@ header {
   margin-bottom: 1%;
   letter-spacing: 1px;
   color: #DD5844;
+  transition:all 0.3s ease;
+  transition: transform 1s;
+}
+
+#thymely-herotitle h2:hover {
+  color: #de7c6d;
+  transform: scale(1.3);
 }
 
 #thymely-herotitle h1{
@@ -82,7 +111,14 @@ header {
   font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 15%;
-  color:#F5C3AE;
+  color:#efac90;
+  transition:color 0.3s ease;
+  transition: transform 1s;
+}
+
+#thymely-herotitle h1:hover {
+  color: #F5C3AE;
+  transform: scale(1.1);
 }
 
 /* ----------------------------Index.html Main ---------------------------------*/
@@ -110,12 +146,24 @@ header {
   font-size: 90%;
   margin-bottom: 1%;
   letter-spacing: 1px;
+  color:#777777;
+  transition:all 0.5s ease;
+}
+
+#thymely-intro h2:hover {
+  color: #DD5844;
 }
 
 #thymely-intro h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 300%;
   font-weight: 600;
+  color:#2C2C2C;
+  transition:all 0.5s ease;
+}
+
+#thymely-intro h1:hover {
+  color: #6F62D0;
 }
 
 #thymely-intro p {
@@ -123,11 +171,17 @@ header {
   font-size: 170%;
   margin-top: 6%;
   margin-bottom: 6%;
+  color: #4E4E4E;
+  transition:all 0.5s ease;
+}
+
+#thymely-intro p:hover {
+  color: #F5C3AE;
 }
 
 #thymely-intro img{
   width: 100%;
-  border: 8px solid #38326A;
+  border: 8px solid #6F62D0;
   border-radius: 8px;
 }
 
@@ -144,6 +198,12 @@ header {
   font-weight: 600;
   margin-top: 4%;
   margin-bottom: 6%;
+  transition:all 0.5s ease; 
+}
+
+#thymely-form h1:hover {
+  /*Disneys secret green color*/
+  color: #8DA487; 
 }
 
 form {
@@ -173,24 +233,31 @@ select {
   margin-left: auto;
   margin-right: auto;
   font-family: 'Montserrat', sans-serif;
+  background-color: #d3cdff;
+  transition:all 0.3s ease;
 }
 
-select:focus, select:hover {
-  background: #cbc4ff;
+select:hover {
+  background-color: #eceafd;
 }
 
 label {
   font-family: 'Oswald', sans-serif;
   font-size: 25pt;
   margin-left: 15px;
-  color: #242043;
+  color: #E8B9A5;
+  transition:all 1s ease;
+}
+
+label:hover {
+  color: #EA8D58;
 }
 
 button {
   border: 8px solid #5E251D;
   background-color: #EA8D58;
   color: #5E251D;
-  border-radius: 8px;
+  border-radius: 40px;
   padding: 8px 20px;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
@@ -198,11 +265,19 @@ button {
   margin-bottom: 20px;
   margin-top: 40px;
   width: 30%;
+  transition:all 0.8s ease;
+  transition:margin-top 0.8s ease;
 }
 
-button:focus, button:hover {
-  background: #F5C3AE;
-}
+ button:focus, button:hover {
+  /*Disneys secret green color*/
+  background-color: #8DA487; 
+  border: 8px solid #4d5a4a;
+  color: #E3E3E3;
+  border-radius:50%;
+  width:25%;
+  margin-top: 20px;
+} 
 
 /* ----------------------------about.html ---------------------------------*/
 
@@ -350,11 +425,19 @@ footer nav{
 }
 
 footer nav a{
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding-left: 0.5%;;
+  padding-right: 0.5%;;
+  padding-top: 0.4%;
+  padding-bottom: 0.4%;
   color: #CFA593;
+  transition:all 0.3s ease;
 }
 
 footer a:hover {
-  color: #EA8D58;
+  color: #e8e1de;
+  border: 8px solid #DD5844;
+  border-radius: 8px;
+  background-color: #DD5844;
 }
