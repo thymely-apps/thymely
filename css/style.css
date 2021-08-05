@@ -266,7 +266,7 @@ label:hover {
   color: #EA8D58;
 }
 
-button {
+#thymely-form button {
   border: 8px solid #5E251D;
   background-color: #EA8D58;
   color: #5E251D;
@@ -282,15 +282,15 @@ button {
   transition:margin-top 0.8s ease;
 }
 
-button:focus, button:hover {
+#thymely-form button:focus, #thymely-form button:hover {
   /*Disneys secret green color*/
   background-color: #8DA487; 
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
   border-radius:50%;
-  width:23%;
+  width:25%;
   margin-top: 20px;
-  padding: 4%;
+  padding: 28px;
 } 
 
 /* ----------------------------about.html ---------------------------------*/
@@ -333,15 +333,15 @@ color: #6F62D0;
 }
 
 #thymely-about-articles {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 6%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 12%;
+  margin-bottom: 750px;
 }
 
 #thymely-about-articles article {
@@ -360,23 +360,42 @@ color: #6F62D0;
   font-family: 'Oswald', sans-serif;
   font-size: 200%;
   font-weight: 600;
-  margin-top: 10%;
-  margin-bottom: 4%;
+  margin-bottom: 6%;
   text-transform: capitalize;
   color:#2C2C2C;
   transition:all 0.5s ease;
+  width: 270px;
 }
 
 #thymely-about-articles h2:hover {
-color: #6F62D0;
+  /*Disneys secret green color*/
+  color: #8DA487; 
+}
+
+#thymely-about-section h3 a{
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 100%;
+  margin-bottom: 1%;
+  letter-spacing: 1px;
+  color:#4E4E4E;
+  margin-left: 2%;
+  transition:all 0.5s ease;
+}
+
+#thymely-about-section h3 a:hover {
+  color: #6F62D0;
 }
 
 #thymely-about-articles p {
   font-family: 'Montserrat', sans-serif;
   font-size: 130%;
-  margin-top: 6%;
+  margin-top: 8%;
   color:#777777;
+  width: 255px;
   transition:all 0.5s ease;
+  line-height: 23px;
+  text-align: left;
 }
 
 #thymely-about-articles p:hover {
@@ -397,6 +416,7 @@ color: #F5C3AE;
   height: 100%;
   transition: transform 2s;
   transform-style: preserve-3d;
+  margin-bottom: 20%;
 }
 
 #thymely-marquesa-cardflip:hover, #thymely-sarah-cardflip:hover, #thymely-alex-cardflip:hover, #thymely-joe-cardflip:hover {
@@ -418,8 +438,9 @@ color: #F5C3AE;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  margin-left: 10%;
   margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #thymely-results-page div{
@@ -436,6 +457,23 @@ color: #F5C3AE;
   margin-bottom: 1%;
   letter-spacing: 1px;
   margin-left: 2.5%;
+  transition:all 0.5s ease;
+}
+
+#thymely-results-page h3:hover {
+  color: #DD5844;
+}
+
+#thymely-results-page h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+  margin-left: 2%;
+  transition:all 0.5s ease;
+}
+
+#thymely-results-page h1:hover {
+color: #6F62D0;
 }
 
 #thymely-results-page h2 {
@@ -446,31 +484,59 @@ color: #F5C3AE;
   margin-bottom: 4%;
   margin-top: 6%;
   letter-spacing: 1px;
+  transition:all 0.5s ease;
+}
+
+#thymely-results-page h2:hover {
+  /*Disneys secret green color*/
+  color: #8DA487; 
 }
 
 #thymely-results-page img {
   width: 60%;
-}
-
-#thymely-results-page h1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 300%;
-  font-weight: 600;
-  margin-left: 2%;
+  border: 8px solid #38326A;
 }
 
 #thymely-results-page p {
   font-family: 'Montserrat', sans-serif;
+  color:#777777;
   font-size: 150%;
   margin-top: 6%;;
   margin-bottom: 8%;
   margin-left: 2%;
+  transition:all 0.5s ease;
+}
+
+#thymely-results-page p:hover {
+color: #F5C3AE;
 }
 
 #thymely-results-page button{
+  border: 8px solid #5E251D;
+  background-color: #EA8D58;
+  color: #5E251D;
+  border-radius: 40px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18pt;
   margin-bottom: 10%;
-  margin-top: 8%;
+  margin-top: 6%;
+  width: 14%;
+  transition:all 0.8s ease;
+  transition:margin-top 0.8s ease;
 }
+
+#thymely-results-page button:focus, #thymely-results-page button:hover {
+  /*Disneys secret green color*/
+  background-color: #8DA487; 
+  border: 8px solid #4d5a4a;
+  color: #E3E3E3;
+  border-radius:50%;
+  margin-top: 20px;
+  padding: 25px;
+  width: 11%;
+} 
 
 /* ------------------------------Footer ---------------------------------*/
 
@@ -480,18 +546,34 @@ footer {
   background-position: bottom;
   background-attachment: fixed;
   background-size: 100%;
-  height:200px;
+  height:300px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-header {
-  height:700px;
-  background-repeat: no-repeat;
-  background-image: url("../img/disney-background-img.jpg");
-  background-position: top;
-  background-attachment: fixed;
-  background-size: 100%;
+footer h3{
+  margin-top: 2%;
+  margin-bottom: 4%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+  color:#777777;
+  width: 600px;
+  text-align: center;
+  line-height: 20px;
+}
+
+footer h3 a{
+  color: #777777;
+  transition:all 0.5s ease;
+}
+footer h3 a:hover{
+  color: #B1B1B1;
+}
+
+#thymely-footer-nav {
+  margin-top: 4%;
 }
 
 footer nav{
@@ -505,8 +587,8 @@ footer nav{
 }
 
 footer nav a{
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding-left: 0.5%;;
   padding-right: 0.5%;;
   padding-top: 0.4%;
@@ -515,7 +597,7 @@ footer nav a{
   transition:all 0.3s ease;
 }
 
-footer a:hover {
+footer nav a:hover {
   color: #e8e1de;
   border: 8px solid #DD5844;
   border-radius: 8px;
