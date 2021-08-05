@@ -8,15 +8,12 @@ const PredicateTests = {
         'should not mutate properties on assignment ' +
         'when constructor is finished.', (assert) => {
           const expected = {
-            franchise: 'Franchise',
+            location: 'LOCATION',
             thrillLevel: 'Thrill Level',
-            activityLevel: 'Activity Level',
           };
           const actual = new Predicate(
-              expected.franchise,
-              expected.thrillLevel,
-              expected.activityLevel,
-          );
+              expected.location,
+              expected.thrillLevel);
 
           TestLib.Object.hasSamePropertiesAndValues(assert, expected, actual);
         });

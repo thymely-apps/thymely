@@ -3,13 +3,20 @@
 const CommonLib = {
 
   Constants: {
+
+    // Let's keep our magic strings LCase
+
+    THRILL_LEVEL_NAME: 'thrill-level',
+    THRILL_LEVEL_DEFAULT: 'medium',
     THRILL_LEVEL_HIGH: 'high',
     THRILL_LEVEL_MEDIUM: 'medium',
     THRILL_LEVEL_LOW: 'low',
 
-    ACTIVITY_LEVEL_HIGH: 'high',
-    ACTIVITY_LEVEL_MEDIUM: 'medium',
-    ACTIVITY_LEVEL_LOW: 'low',
+    PARK_AREA_NAME: 'park-area',
+    PARK_AREA_DEFAULT: 'medium',
+    PARK_AREA_HIGH: 'high',
+    PARK_AREA_MEDIUM: 'medium',
+    PARK_AREA_LOW: 'low',
   },
 
   Array: {
@@ -31,40 +38,26 @@ const CommonLib = {
   Event: {
 
     /**
-     * @param {HTMLElementEventMap[string]} event
-     * @returns {function(event:HTMLElementEventMap[string]) : void}
+     * @param {HTMLElementEventMap[string]} e
+     * @returns {Predicate}
      */
-    getSubmitButtonClickDelegate: {
-      function(event) {
-        event.preventDefault();
+    getSubmitButtonClickDelegate: function(e) {
+      e.preventDefault();
 
-        // todo: get result from form
-        // event.target.;
-        // todo: generate results
-        result = new Result(a, b, c);
-        // todo: store results in local storage
-        // redirect
-        window.location.assign(window.location.href + '/results.html');
-      },
-    },
+      const location = e.target['park-area'].value;
+      const thrillLevel = e.target['thrill-level'].value;
 
-    /**
-     * @param {string} domElementId
-     * @param {function(event:HTMLElementEventMap[string]) : void} actionDelegate
-     */
-    attachClickListener: function(domElementId, actionDelegate) {
-      const target = document.getElementById(domElementId);
-      target.addEventListener('click', actionDelegate);
+      return new Predicate(location, thrillLevel);
     },
+  },
 
-    /**
-     * @param {string} domElementId
-     * @param {function(event:HTMLElementEventMap[string]) : void} actionDelegate
-     */
-    removeClickListener: function(domElementId, actionDelegate) {
-      const target = document.getElementById(domElementId);
-      target.removeEventListener('click', actionDelegate);
-    },
+  /**
+   * @param {string} domElementId
+   * @param {function(event:HTMLElementEventMap[string]) : void} actionDelegate
+   */
+  removeClickListener: function(domElementId, actionDelegate) {
+    const target = document.getElementById(domElementId);
+    target.removeEventListener('click', actionDelegate);
   },
 
   Persistence: {

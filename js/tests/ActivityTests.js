@@ -12,20 +12,21 @@ const ActivityTests = {
             shortDescription: 'short',
             longDescription: 'long',
             imageUrl: 'image',
-            franchise: 'franchise',
+            location: 'location',
             thrillLevel: 'thrill',
-            activityLevel: 'activity',
           };
           const actual = new Activity(
               expected.title,
               expected.shortDescription,
               expected.longDescription,
               expected.imageUrl,
-              expected.franchise,
-              expected.thrillLevel,
-              expected.activityLevel);
+              expected.location,
+              expected.thrillLevel);
 
-          TestLib.Object.hasSamePropertiesAndValues(assert, expected, actual);
+          TestLib.Object.hasSamePropertiesAndValues(
+              assert,
+              expected,
+              actual);
         });
   },
 

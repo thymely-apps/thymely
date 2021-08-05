@@ -12,25 +12,33 @@ const Repository = function(storageKey) {
 };
 
 Repository.prototype = (function() {
-  /** @type {object[]} */
-  let _value = [];
+  /** @type {any[]} */
+  let _inMemoryBacking = [];
 
   return {
     /**
-     * @param {object} obj
+     * @param {any} obj
      */
     add: function(obj) {
-      _value.push(obj);
+      _inMemoryBacking.push(obj);
 
       this.store();
     },
 
     /**
      * @param {Predicate} predicate
-     * @returns {object[]}
+     * @returns {any[]}
      */
     get: function(predicate) {
-      return _value.filter(predicate.filter);
+      if (!predicate) return _inMemoryBacking;
+
+      let result = [];
+      for (const value of _inMemoryBacking) {
+        if (predicate.filter(value)) {
+          result.push(value);
+        }
+      }
+      return result;
     },
 
     /**
@@ -40,9 +48,9 @@ Repository.prototype = (function() {
       const obj = JSON.parse(repositoryJson);
 
       if (typeof obj === typeof [])
-        _value = [..._value, ...obj];
+        _inMemoryBacking = [..._inMemoryBacking, ...obj];
 
-      _value = [..._value, obj];
+      _inMemoryBacking = [..._inMemoryBacking, obj];
 
       this.store();
     },
@@ -52,14 +60,14 @@ Repository.prototype = (function() {
      */
     load: function() {
       const valueFromStorage = CommonLib.Persistence.load(this.STORAGE_KEY);
-      _value = valueFromStorage ?? [];
+      _inMemoryBacking = valueFromStorage ?? [];
     },
 
     /**
      * @returns {void}
      */
     store: function() {
-      const jsonString = JSON.stringify(_value);
+      const jsonString = JSON.stringify(_inMemoryBacking);
       CommonLib.Persistence.store(this.STORAGE_KEY, jsonString);
     },
   };

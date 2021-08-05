@@ -1,14 +1,15 @@
 'use strict';
 
 /**
+ * @param {string} storageKey
  * @constructor
  */
-const ResultRepository = function() {
+const ResultRepository = function(storageKey = 'Results') {
   /** @type {string} */
-  const STORAGE_KEY = 'Results';
+  this.storageKey = storageKey;
 
   /** @type {Repository} */
-  this.activities = new Repository(STORAGE_KEY);
+  this.activities = new Repository(storageKey);
 
   this.activities.load();
 };

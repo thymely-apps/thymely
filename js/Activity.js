@@ -7,9 +7,8 @@
  * @param {string} shortDescription
  * @param {string} longDescription
  * @param {string} imageUrl
- * @param {string} franchise
+ * @param {string} location
  * @param {string} thrillLevel
- * @param {string} activityLevel
  * @returns Activity
  * @constructor
  */
@@ -18,9 +17,8 @@ const Activity = function(
     shortDescription,
     longDescription,
     imageUrl,
-    franchise,
-    thrillLevel,
-    activityLevel) {
+    location,
+    thrillLevel) {
   /** @type {string} */
   this.title = title;
 
@@ -34,11 +32,8 @@ const Activity = function(
   this.imageUrl = imageUrl;
 
   /** @type {string} */
-  this.franchise = franchise;
+  this.location = location;
 
   /** @type {string} */
   this.thrillLevel = thrillLevel;
-
-  /** @type {string} */
-  this.activityLevel = activityLevel;
 };

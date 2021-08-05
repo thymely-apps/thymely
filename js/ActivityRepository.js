@@ -3,12 +3,11 @@
 /**
  * @constructor
  */
-const ActivityRepository = function() {
-  /** @type {string} */
-  const STORAGE_KEY = 'Activities';
+const ActivityRepository = function(storageKey = 'Activities') {
+  this.storageKey = storageKey;
 
   /** @type {Repository} */
-  this.activities = new Repository(STORAGE_KEY);
+  this.activities = new Repository(storageKey);
 
   this.activities.load();
 };

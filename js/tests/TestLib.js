@@ -17,8 +17,8 @@ const TestLib = {
         const actualPropertyValue = actual[actualPropertyName];
         const expectedPropertyValue = expected[expectedPropertyName];
 
-        assert.equal(expectedPropertyName, actualPropertyName);
-        assert.equal(expectedPropertyValue, actualPropertyValue);
+        assert.equal(actualPropertyName, expectedPropertyName);
+        assert.equal(actualPropertyValue, expectedPropertyValue);
       }
     },
   },
@@ -30,7 +30,7 @@ const TestLib = {
      * @param {any} actual
      */
     isEqual: function(assert, expected, actual) {
-      assert.equal(expected, actual);
+      assert.equal(actual, expected);
     },
 
     /**
@@ -38,7 +38,7 @@ const TestLib = {
      * @param {any} actual
      */
     isTrue: function(assert, actual) {
-      assert.equal(true, actual);
+      assert.equal(actual, true);
     },
 
     /**
@@ -46,7 +46,7 @@ const TestLib = {
      * @param {any} actual
      */
     isFalse: function(assert, actual) {
-      assert.equal(false, actual);
+      assert.equal(actual, false);
     },
   },
 };

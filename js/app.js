@@ -1,10 +1,15 @@
 'use strict';
 
-/* Application Driver Class */
+/* Application Driver */
 
 const activityRepository = new ActivityRepository();
 const resultRepository = new ResultRepository();
 
-CommonLib.Event.attachClickListener(
-    '',
-    CommonLib.Event.submitButtonClickDelegate);
+document.addEventListener(
+    'submit',
+    (e) => {
+      const predicate = CommonLib.Event.getSubmitButtonClickDelegate(e);
+      const matchingActivities = resultRepository.activities.get(predicate);
+      window.location.assign('./results.html');
+    },
+);
