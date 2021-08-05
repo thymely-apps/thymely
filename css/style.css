@@ -288,7 +288,7 @@ label:hover {
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
   border-radius:50%;
-  width:25%;
+  width:150px;
   margin-top: 20px;
   padding: 28px;
 } 
@@ -535,7 +535,7 @@ color: #F5C3AE;
   border-radius:50%;
   margin-top: 20px;
   padding: 25px;
-  width: 11%;
+  width:150px;
 } 
 
 /* ------------------------------Footer ---------------------------------*/
