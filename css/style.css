@@ -80,13 +80,10 @@ header {
   width:120px;
   margin-top: 2%;
   margin-bottom: 1%;
-  opacity:1;
-  transition:opacity 0.3s ease-in-out;
   transition: transform 1s;
 }
 
 #thymely-herotitle img:hover {
-  opacity: .7;
   transform: scale(1.3);
 }
 
@@ -122,8 +119,6 @@ header {
 }
 
 /* ----------------------------Index.html Main ---------------------------------*/
-
-
 
 #thymely-sectionone {
   display: flex;
@@ -183,6 +178,24 @@ header {
   width: 100%;
   border: 8px solid #6F62D0;
   border-radius: 8px;
+  margin-top: 2%;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
 }
 
 #thymely-form {
@@ -269,61 +282,78 @@ button {
   transition:margin-top 0.8s ease;
 }
 
- button:focus, button:hover {
+button:focus, button:hover {
   /*Disneys secret green color*/
   background-color: #8DA487; 
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
   border-radius:50%;
-  width:25%;
+  width:23%;
   margin-top: 20px;
+  padding: 4%;
 } 
 
 /* ----------------------------about.html ---------------------------------*/
 
-
-#thymely-about-section {
+#thymely-about-heading{
   width: 40%;
   margin-left: 6%;
   margin-right: 2%;
   display: flex;
   flex-direction: column;
   margin-top: 10%;
-  margin-bottom: 10%;
 }
 
-#thymely-about-section h2 {
+#thymely-about-heading h2 {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-size: 90%;
   margin-bottom: 1%;
   letter-spacing: 1px;
   margin-left: 2.5%;
+  color:#777777;
+  transition:all 0.5s ease;
 }
 
-#thymely-about-section h1 {
+#thymely-about-heading h2:hover {
+color: #DD5844;
+}
+
+#thymely-about-heading h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 300%;
   font-weight: 600;
   margin-left: 2%;
+  color:#2C2C2C;
+  transition:all 0.5s ease;
+}
+
+#thymely-about-heading h1:hover {
+color: #6F62D0;
 }
 
 #thymely-about-articles {
-  width: 210%;
+  width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  margin-top: 15%;
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12%;
+}
+
+#thymely-about-articles article {
+  padding-left: 2%;
+  padding-right:2%;
 }
 
 #thymely-about-articles img {
-  width: 85%;
+  width: 100px;
+  width: 250px;
   border: 8px solid #38326A;
   border-radius: 8px; 
-  margin-left: 10%;
-  margin-right:10%;
-  
 }
 
 #thymely-about-articles h2 {
@@ -332,15 +362,51 @@ button {
   font-weight: 600;
   margin-top: 10%;
   margin-bottom: 4%;
-  margin-left: 11%;
+  text-transform: capitalize;
+  color:#2C2C2C;
+  transition:all 0.5s ease;
+}
+
+#thymely-about-articles h2:hover {
+color: #6F62D0;
 }
 
 #thymely-about-articles p {
   font-family: 'Montserrat', sans-serif;
   font-size: 130%;
   margin-top: 6%;
-  margin-left: 11%;
-  
+  color:#777777;
+  transition:all 0.5s ease;
+}
+
+#thymely-about-articles p:hover {
+color: #F5C3AE;
+}
+
+#thymely-team-member-one, #thymely-team-member-two, #thymely-team-member-three, #thymely-team-member-four {
+  border-radius: 25px;
+  padding: 10px;
+  width: 300px;
+  height: 325px;
+  perspective: 1000px;
+}
+
+#thymely-marquesa-cardflip, #thymely-sarah-cardflip, #thymely-alex-cardflip, #thymely-joe-cardflip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+#thymely-marquesa-cardflip:hover, #thymely-sarah-cardflip:hover, #thymely-alex-cardflip:hover, #thymely-joe-cardflip:hover {
+  transform: rotateY(180deg);
+}
+
+#thymely-marquesa-img-front, #thymely-sarah-img-front, #thymely-alex-img-front, #thymely-joe-img-front {
+  position: absolute;
+  border-radius: 25px;
+  backface-visibility: hidden;
 }
 
 /* ----------------------------results.html ---------------------------------*/
@@ -385,6 +451,7 @@ button {
 #thymely-results-page img {
   width: 60%;
 }
+
 #thymely-results-page h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 300%;
@@ -408,10 +475,23 @@ button {
 /* ------------------------------Footer ---------------------------------*/
 
 footer {
-  background-color: #374197; 
+  background-image: url("../img/footer-img.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: 100%;
   height:200px;
   display: flex;
   align-items: center;
+}
+
+header {
+  height:700px;
+  background-repeat: no-repeat;
+  background-image: url("../img/disney-background-img.jpg");
+  background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
 }
 
 footer nav{
@@ -441,3 +521,32 @@ footer a:hover {
   border-radius: 8px;
   background-color: #DD5844;
 }
+
+
+
+/*
+animation: wiggle 2s ease;
+  animation-iteration-count: 1;  
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-2deg);
+  }
+  20% {
+    transform: rotateZ(2deg);
+  }
+  25% {
+    transform: rotateZ(-4deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-1deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}*/
