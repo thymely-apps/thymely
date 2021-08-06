@@ -57,7 +57,7 @@
       <p>Short description</p>
     </div>
 
-    <button type="submit">Try Again</button>
+    <button id='thymely-regen-button' type="submit">Try Again</button>
 
   </Section>
 </main>
@@ -123,6 +123,13 @@
       ride2ElementTitle.innerText = results[2].title;
       ride2ElementDescription.innerText = results[2].shortDescription;
       ride2ElementImage.setAttribute('src', results[2].imageUrl);
+
+      document.getElementById('thymely-regen-button').addEventListener(
+          'click',
+          (e) => {
+            window.location.assign('./index.html');
+          },
+      );
     </script>
   </div>
 </div>
