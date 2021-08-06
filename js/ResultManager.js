@@ -11,71 +11,69 @@ const ResultManager = function(
     resultRepository) {
   this.activityRepository = activityRepository;
   this.resultRepository = resultRepository;
-};
 
-ResultManager.prototype = (function() {
   /** @type {Predicate} */
-  let _predicate = new Predicate(
+  this._predicate = new Predicate(
       CommonLib.Constants.PARK_AREA_DEFAULT,
       CommonLib.Constants.THRILL_LEVEL_DEFAULT);
 
   /** @type {Result} */
-  let _resultSet = null;
+  this._result = null;
 
-  /**
-   * @param {Predicate} predicate
-   * @param {ResultManager} context
-   * @returns {Result}
-   */
-  function regenSet(context, predicate) {
-    const activities = context.activityRepository.activities.get(predicate);
+  ResultManager.prototype = {
 
-    // validate results
-    const resultSet = new Result(activities, predicate);
-
-    context.resultRepository.activities.add(resultSet);
-
-    return resultSet;
-  }
-
-  /**
-   * @param {Predicate} predicate
-   * @param {ResultManager} context
-   * @returns {Activity[]}
-   */
-  function getActivities(context, predicate) {
-    if (!_resultSet) _resultSet = regenSet(context, predicate);
-
-    return _resultSet.activities;
-  }
-
-  /**
-   * @param context
-   */
-  function validateResult(context) {
-
-  }
-
-  return {
     /**
-     * @param {int} quantity
+     * @param {Predicate} predicate
+     * @param {ResultManager} context
+     * @returns {Result}
+     */
+    regenSet: function(predicate) {
+      const activities = this.activityRepository.activities.get(predicate);
+
+      // todo: validate results
+
+      const resultSet = new Result(activities, predicate);
+
+      this.resultRepository.results.add(resultSet);
+
+      return resultSet;
+    },
+
+    /**
+     * @param {Predicate} predicate
+     * @param {ResultManager} context
+     * @returns {Set<Activity>}
+     */
+    getActivities: function(predicate) {
+      if (!this._result) this._result = regenSet(predicate);
+
+      return this._result.activities;
+    },
+
+    /**
+     * @param context
+     */
+    validateResult: function(context) {
+
+    },
+
+    /**
+     * @param {Predicate} predicate
      * @returns {Result}
      */
     generateResults: function(predicate) {
-      /** @type {Activity[]} */
-      _resultSet = new Result(getActivities(this, predicate), predicate);
+      this._result = new Result(this.getActivities(predicate), predicate);
 
-      return _resultSet;
+      return this._result;
     },
 
     /**
      * @param {Predicate} predicate
      */
     setPredicate: function(predicate) {
-
     },
 
     rejectFromResults: function() {
     },
   };
-})();
+};

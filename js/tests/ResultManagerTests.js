@@ -7,21 +7,19 @@ const ResultManagerTests = {
         'ResultManager class constructor ' +
         'should not mutate properties on assignment ' +
         'when constructor is finished.', (assert) => {
-          const expected = {
-            activityRepository: new ActivityRepository('TEST-ACTIVITIES'),
-            resultRepository: new ResultRepository('TEST-RESULTS'),
-          };
+          const activityRepository = new ActivityRepository('TEST_RESULTMANAGER_ACTIVITYREPOSITORY_IMMUTABLE_CTOR');
+          const resultRepository = new ResultRepository('TEST_RESULTMANAGER_RESULTREPOSITORY_IMMUTABLE_CTOR');
           const actual = new ResultManager(
-              expected.activityRepository,
-              expected.resultRepository);
+              activityRepository,
+              resultRepository);
 
           TestLib.Object.hasSamePropertiesAndValues(
               assert,
-              expected.activityRepository,
+              activityRepository,
               actual.activityRepository);
           TestLib.Object.hasSamePropertiesAndValues(
               assert,
-              expected.resultRepository,
+              resultRepository,
               actual.resultRepository);
         });
   },
@@ -33,9 +31,9 @@ const ResultManagerTests = {
         'when there are no results.', (assert) => {
 
           const activityRepository = new ActivityRepository(
-              'TEST-ACTIVITIES');
+              'TEST_RESULTMANAGER_ACTIVITYREPOSITORY_GENERATE');
           const resultRepository = new ResultRepository(
-              'TEST-RESULTS');
+              'TEST_RESULTMANAGER_RESULTREPOSITORY_GENERATE');
 
           const sut = new ResultManager(
               activityRepository,
@@ -45,7 +43,7 @@ const ResultManagerTests = {
               CommonLib.Constants.THRILL_LEVEL_LOW);
 
           const expected = 1;
-          const actual = sut.generateResults(predicate).activities.length;
+          const actual = sut.generateResults(predicate).activities.size;
 
           TestLib.Value.isEqual(
               assert,

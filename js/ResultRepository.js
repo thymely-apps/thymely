@@ -5,11 +5,8 @@
  * @constructor
  */
 const ResultRepository = function(storageKey = 'Results') {
-  /** @type {string} */
-  this.storageKey = storageKey;
-
   /** @type {Repository} */
-  this.activities = new Repository(storageKey);
+  this.results = new Repository(storageKey);
 
-  this.activities.load();
+  this.results.load();
 };

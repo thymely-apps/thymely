@@ -12,18 +12,16 @@ const Predicate = function(
 
   this.location = location;
   this.thrillLevel = thrillLevel;
-};
 
-/**
- * @param {Activity} activity
- * @returns {boolean}
- */
-Predicate.prototype = {
-  filter: function(activity) {
+  /**
+   * @param {Activity} activity
+   * @returns {boolean}
+   */
+  Predicate.prototype.filter = function(activity) {
     const isLocationMatch = (activity.location === this.location) > 0;
     const isThrillLevelMatch = (activity.thrillLevel === this.thrillLevel) >
         0;
 
     return isLocationMatch && isThrillLevelMatch;
-  },
+  };
 };
