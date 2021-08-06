@@ -10,7 +10,7 @@ const CommonLib = {
     THRILL_LEVEL_DEFAULT: 'medium',
     THRILL_LEVEL_HIGH: 'high',
     THRILL_LEVEL_MEDIUM: 'medium',
-    THRILL_LEVEL_LOW: 'low',
+    THRILL_LEVEL_LOW: 'LOW',
 
     PARK_AREA_NAME: 'park-area',
     PARK_AREA_DEFAULT: 'medium',

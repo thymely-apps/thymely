@@ -9,66 +9,63 @@ const Repository = function(storageKey) {
 
   /** @type {string} */
   this.STORAGE_KEY = storageKey;
-};
 
-Repository.prototype = (function() {
-  /** @type {any[]} */
-  let _inMemoryBacking = [];
+  /** @type {Set<any>} */
+  this._inMemoryBacking = new Set();
 
-  return {
-    /**
-     * @param {any} obj
-     */
-    add: function(obj) {
-      _inMemoryBacking.push(obj);
+  /**
+   * @param {any} obj
+   */
+  Repository.prototype.add = function(obj) {
+    this._inMemoryBacking.add(obj);
 
-      this.store();
-    },
-
-    /**
-     * @param {Predicate} predicate
-     * @returns {any[]}
-     */
-    get: function(predicate) {
-      if (!predicate) return _inMemoryBacking;
-
-      let result = [];
-      for (const value of _inMemoryBacking) {
-        if (predicate.filter(value)) {
-          result.push(value);
-        }
-      }
-      return result;
-    },
-
-    /**
-     * @param {string} repositoryJson
-     */
-    addJson: function(repositoryJson) {
-      const obj = JSON.parse(repositoryJson);
-
-      if (typeof obj === typeof [])
-        _inMemoryBacking = [..._inMemoryBacking, ...obj];
-
-      _inMemoryBacking = [..._inMemoryBacking, obj];
-
-      this.store();
-    },
-
-    /**
-     * @returns {void}
-     */
-    load: function() {
-      const valueFromStorage = CommonLib.Persistence.load(this.STORAGE_KEY);
-      _inMemoryBacking = valueFromStorage ?? [];
-    },
-
-    /**
-     * @returns {void}
-     */
-    store: function() {
-      const jsonString = JSON.stringify(_inMemoryBacking);
-      CommonLib.Persistence.store(this.STORAGE_KEY, jsonString);
-    },
+    this.store();
   };
-})();
+
+  /**
+   * @param {Predicate} predicate
+   * @returns {Set<any>}
+   */
+  Repository.prototype.get = function(predicate) {
+    if (!predicate) return this._inMemoryBacking;
+
+    let result = new Set();
+    for (const value of this._inMemoryBacking.entries()) {
+      if (predicate.filter(value[1])) {
+        result.add(value[1]);
+      }
+    }
+    return result;
+  };
+
+  /**
+   * @param {any} repositoryJson
+   */
+  Repository.prototype.addJson = function(repositoryJson) {
+    const obj = JSON.parse(repositoryJson);
+
+    if (typeof obj === typeof []) obj.forEach(
+        _ => this._inMemoryBacking.add(_));
+    else this._inMemoryBacking.add(obj);
+
+    this.store();
+  };
+
+  /**
+   * @returns {void}
+   */
+  Repository.prototype.load = function() {
+    const valueFromStorage = CommonLib.Persistence.load(this.STORAGE_KEY);
+    if (!valueFromStorage || Object.keys(valueFromStorage).length < 1) return;
+    this._inMemoryBacking.add(valueFromStorage);
+  };
+
+  /**
+   * @returns {void}
+   */
+  Repository.prototype.store = function() {
+    const jsonString = JSON.stringify([...this._inMemoryBacking]);
+    if (!jsonString || jsonString === JSON.stringify({})) return;
+    CommonLib.Persistence.store(this.STORAGE_KEY, jsonString);
+  };
+};
