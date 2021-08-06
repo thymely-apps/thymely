@@ -207,7 +207,7 @@ header {
 
 #thymely-form h1{
   font-family: 'Oswald', sans-serif;
-  font-size: 300%;
+  font-size: 350%;
   font-weight: 600;
   margin-top: 4%;
   margin-bottom: 6%;
@@ -224,20 +224,23 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 fieldset {
-  width: 360px;
+  width: 480px;
   border: 8px solid #38326A;
   border-radius: 8px;
   padding:50px;
   text-align: left;
   background-color: #6F62D0;
+  cursor: pointer;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
 
 select {
   font-size: 20pt;
-  width: 90%;
+  width: 100%;
   border-radius: 8px;
   padding: 5px;
   display: block;
@@ -246,24 +249,54 @@ select {
   margin-left: auto;
   margin-right: auto;
   font-family: 'Montserrat', sans-serif;
-  background-color: #d3cdff;
+  background-color: #faecff;
   transition:all 0.3s ease;
+  cursor: pointer;
+  color:#6F62D0;
+  font-weight: 8;
 }
 
-select:hover {
-  background-color: #eceafd;
+select:active, select:hover {
+  background-color: #cec7ff;
+  cursor: pointer;
+  animation: wiggle 2s ease;
+  animation-iteration-count: 1;  
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-2deg);
+  }
+  20% {
+    transform: rotateZ(2deg);
+  }
+  25% {
+    transform: rotateZ(-4deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-1deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
 }
 
 label {
   font-family: 'Oswald', sans-serif;
-  font-size: 25pt;
+  font-size: 30pt;
   margin-left: 15px;
-  color: #E8B9A5;
+  color: #d0b6eb;
   transition:all 1s ease;
 }
 
 label:hover {
-  color: #EA8D58;
+  color: #faecff;
 }
 
 #thymely-form button {
@@ -277,9 +310,11 @@ label:hover {
   font-size: 18pt;
   margin-bottom: 20px;
   margin-top: 40px;
-  width: 30%;
+  width: 60%;
   transition:all 0.8s ease;
   transition:margin-top 0.8s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
 
 #thymely-form button:focus, #thymely-form button:hover {
@@ -291,6 +326,7 @@ label:hover {
   width:150px;
   margin-top: 20px;
   padding: 28px;
+  cursor: pointer;
 } 
 
 /* ----------------------------about.html ---------------------------------*/
@@ -589,10 +625,10 @@ footer nav{
 footer nav a{
   margin-left: 10%;
   margin-right: 10%;
-  padding-left: 0.5%;;
-  padding-right: 0.5%;;
-  padding-top: 0.4%;
-  padding-bottom: 0.4%;
+  padding-left: 2%;;
+  padding-right: 2%;;
+  padding-top: 2%;
+  padding-bottom: 2%;
   color: #CFA593;
   transition:all 0.3s ease;
 }
@@ -606,29 +642,3 @@ footer nav a:hover {
 
 
 
-/*
-animation: wiggle 2s ease;
-  animation-iteration-count: 1;  
-@keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-2deg);
-  }
-  20% {
-    transform: rotateZ(2deg);
-  }
-  25% {
-    transform: rotateZ(-4deg);
-  }
-  30% {
-    transform: rotateZ(4deg);
-  }
-  35% {
-    transform: rotateZ(-1deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}*/
