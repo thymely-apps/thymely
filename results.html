@@ -110,8 +110,7 @@
           new Predicate('Adventureland', CommonLib.Constants.THRILL_LEVEL_LOW));
 
       const results = Array.from(result);
-      summaryElement.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud' +
-          results[0].title + results[1].title + results[2].title;
+      summaryElement.innerText = `First you'll be visiting ${results[0].title}. Next, you'll adventure to ${results[1].title}. You'll finish up your adventure at ${results[2].title}.`;
 
       activityElementTitle.innerText = results[0].title;
       activityElementDescription.innerText = results[0].shortDescription;
