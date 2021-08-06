@@ -9,7 +9,7 @@ document.addEventListener(
     'submit',
     (e) => {
       const predicate = CommonLib.Event.getSubmitButtonClickDelegate(e);
-      const matchingActivities = resultRepository.activities.get(predicate);
+      // const matchingActivities = resultRepository.activities.get(predicate);
       window.location.assign('./results.html');
     },
 );
