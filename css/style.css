@@ -468,7 +468,7 @@ color: #F5C3AE;
 /* ----------------------------results.html ---------------------------------*/
 
 #thymely-results-page {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -486,7 +486,7 @@ color: #F5C3AE;
   height: 60%;
 }
 
-#thymely-results-page h3 {
+#thymely-results h3 {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-size: 90%;
@@ -512,15 +512,19 @@ color: #F5C3AE;
 color: #6F62D0;
 }
 
+#thymely-results p{
+  margin-left: 2.5%;
+}
+
 #thymely-results-page h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 250%;
   font-weight: 600;
-  margin-left: 2%;
   margin-bottom: 4%;
   margin-top: 6%;
   letter-spacing: 1px;
   transition:all 0.5s ease;
+  width: 100%;
 }
 
 #thymely-results-page h2:hover {
@@ -529,8 +533,18 @@ color: #6F62D0;
 }
 
 #thymely-results-page img {
-  width: 60%;
+  width: 80%;
   border: 8px solid #38326A;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  transition:all 1s ease;
+  transition: transform 1s;
+}
+
+#thymely-results-page img:hover {
+  transform: scale(1.1);
+  border: 8px solid #6F62D0;
+  border-radius: 8px;
 }
 
 #thymely-results-page p {
@@ -539,7 +553,6 @@ color: #6F62D0;
   font-size: 150%;
   margin-top: 6%;;
   margin-bottom: 8%;
-  margin-left: 2%;
   transition:all 0.5s ease;
 }
 
