@@ -34,7 +34,9 @@ const Repository = function(storageKey) {
       if (predicate.filter(value[1])) {
         result.add(value[1]);
       }
+      else result.add(new Predicate(' ', ' '));
     }
+
     return result;
   };
 
@@ -64,7 +66,7 @@ const Repository = function(storageKey) {
    * @returns {void}
    */
   Repository.prototype.store = function() {
-    const jsonString = JSON.stringify([...this._inMemoryBacking]);
+    const jsonString = JSON.stringify(Array.from(this._inMemoryBacking));
     if (!jsonString || jsonString === JSON.stringify({})) return;
     CommonLib.Persistence.store(this.STORAGE_KEY, jsonString);
   };

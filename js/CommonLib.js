@@ -7,16 +7,16 @@ const CommonLib = {
     // Let's keep our magic strings LCase
 
     THRILL_LEVEL_NAME: 'thrill-level',
-    THRILL_LEVEL_DEFAULT: 'medium',
-    THRILL_LEVEL_HIGH: 'high',
-    THRILL_LEVEL_MEDIUM: 'medium',
+    THRILL_LEVEL_DEFAULT: 'MEDIUM',
+    THRILL_LEVEL_HIGH: 'HIGH',
+    THRILL_LEVEL_MEDIUM: 'MEDIUM',
     THRILL_LEVEL_LOW: 'LOW',
 
     PARK_AREA_NAME: 'park-area',
-    PARK_AREA_DEFAULT: 'medium',
-    PARK_AREA_HIGH: 'high',
-    PARK_AREA_MEDIUM: 'medium',
-    PARK_AREA_LOW: 'low',
+    PARK_AREA_DEFAULT: 'MEDIUM',
+    PARK_AREA_HIGH: 'HIGH',
+    PARK_AREA_MEDIUM: 'MEDIUM',
+    PARK_AREA_LOW: 'LOW',
   },
 
   Array: {

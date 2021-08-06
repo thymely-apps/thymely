@@ -12,68 +12,54 @@ const ResultManager = function(
   this.activityRepository = activityRepository;
   this.resultRepository = resultRepository;
 
-  /** @type {Predicate} */
-  this._predicate = new Predicate(
-      CommonLib.Constants.PARK_AREA_DEFAULT,
-      CommonLib.Constants.THRILL_LEVEL_DEFAULT);
-
   /** @type {Result} */
   this._result = null;
 
-  ResultManager.prototype = {
+  /**
+   * @param {Predicate} predicate
+   * @returns {Result}
+   */
+  ResultManager.prototype.regenSet = function(predicate) {
+    const activities = this.activityRepository.activities.get(predicate);
+    const result = new Result(activities, predicate);
 
-    /**
-     * @param {Predicate} predicate
-     * @param {ResultManager} context
-     * @returns {Result}
-     */
-    regenSet: function(predicate) {
-      const activities = this.activityRepository.activities.get(predicate);
+    // todo: validate results
+    this.resultRepository.results.add(result);
 
-      // todo: validate results
+    return result;
+  };
 
-      const resultSet = new Result(activities, predicate);
+  /**
+   * @param {Predicate} predicate
+   * @returns {Set<Activity>}
+   */
+  ResultManager.prototype.getActivities = function(predicate) {
+    if (!this._result) this._result = this.regenSet(predicate);
 
-      this.resultRepository.results.add(resultSet);
+    return this._result.activities;
+  };
 
-      return resultSet;
-    },
+  /**
+   * @param {Predicate} predicate
+   * @returns {Result}
+   */
+  ResultManager.prototype.generateResults = function(predicate) {
+    this._result = new Result(this.getActivities(predicate), predicate);
 
-    /**
-     * @param {Predicate} predicate
-     * @param {ResultManager} context
-     * @returns {Set<Activity>}
-     */
-    getActivities: function(predicate) {
-      if (!this._result) this._result = regenSet(predicate);
+    if (this._result.activities.size < 1){
+      // todo: there are no results
+    }
 
-      return this._result.activities;
-    },
+    return this._result;
+  };
 
-    /**
-     * @param context
-     */
-    validateResult: function(context) {
+  /**
+   * @param {Predicate} predicate
+   */
+  ResultManager.prototype.setPredicate = function(predicate) {
+    this._result.predicate = predicate;
+  };
 
-    },
-
-    /**
-     * @param {Predicate} predicate
-     * @returns {Result}
-     */
-    generateResults: function(predicate) {
-      this._result = new Result(this.getActivities(predicate), predicate);
-
-      return this._result;
-    },
-
-    /**
-     * @param {Predicate} predicate
-     */
-    setPredicate: function(predicate) {
-    },
-
-    rejectFromResults: function() {
-    },
+  ResultManager.prototype.rejectFromResults = function() {
   };
 };

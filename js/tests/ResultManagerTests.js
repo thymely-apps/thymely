@@ -39,10 +39,10 @@ const ResultManagerTests = {
               activityRepository,
               resultRepository);
           const predicate = new Predicate(
-              'space-mountain?',
+              '!space-mountain?',
               CommonLib.Constants.THRILL_LEVEL_LOW);
 
-          const expected = 1;
+          const expected = 3;
           const actual = sut.generateResults(predicate).activities.size;
 
           TestLib.Value.isEqual(
