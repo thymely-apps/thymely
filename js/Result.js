@@ -2,15 +2,16 @@
 
 /**
  * Result domain entity
- * 
- * @param {Activity[]} activities 
+ *
+ * @param {Activity[]} activities
+ * @param {Predicate} predicate
+ * @returns {Result}
+ * @constructor
  */
-const Result = function (activities) {
+const Result = function(activities, predicate) {
   /** @type {Activity[]} */
   this.activities = activities;
 
-  /** @type {string} */
-  this.storyString = `First, you're going to ${this.activities[0].longDescription}. ` +
-    `Next, you'll visit ${this.activities[1].longDescription}. ` +
-    `And finally, you'll go to ${this.activities[2].longDescription}.`;
-}
+  /** @type {Predicate} */
+  this.predicate = predicate;
+};

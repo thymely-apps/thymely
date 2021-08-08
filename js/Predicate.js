@@ -1,21 +1,33 @@
 'use strict';
 
-const Predicate = function () {
-  /** @type {Activity[]} */
-  this.activities = []; // TODO: turn this into a repository
+/**
+ *
+ * @param {string} location
+ * @param {string} thrillLevel
+ * @constructor
+ */
+const Predicate = function(
+    location,
+    thrillLevel) {
+
+  this.location = location;
+  this.thrillLevel = thrillLevel;
 
   /**
-   * 
-   * @param {*} myPredicate 
+   * @param {Activity} activity
+   * @returns {boolean}
    */
-  Predicate.prototype.applyFilter = function (myPredicate) {
-    // use the predicate to filter the activies
-    // the activities they'll be coming form the activity repository
+  Predicate.prototype.filter = function(activity) {
+    const isLocationMatch = activity.location.toUpperCase() ===
+        this.location.toUpperCase();
+    let isThrillLevelMatch = activity.thrillLevel.toUpperCase() ===
+        this.thrillLevel.toUpperCase();
 
-    if (myPredicate) {
-      // do something
-    } else {
-      // do something else
+    // add a restaurant or shop if predicate doesn't match
+    if (!isThrillLevelMatch) {
+      isThrillLevelMatch = activity.thrillLevel === '*';
     }
-  }
-}
+
+    return isLocationMatch && isThrillLevelMatch;
+  };
+};

@@ -1,9 +1,25 @@
 'use strict';
 
-/* Application Driver Class */
+/* Application Driver */
 
-// The activity repository contains a ton of activities
-// We're going to filter them based on "criteria", a.k.a. predicate
-//  --> applyFilter(activityLevel, thrillLevel)
-// The activity repository might have the the filter as a prototype method.
-const activityRepository = new ActivityRepository([]);
+const activityRepository = new ActivityRepository();
+const resultRepository = new ResultRepository();
+const resultManager = new ResultManager(activityRepository, resultRepository);
+
+resultRepository.results.clear();
+
+document.addEventListener(
+    'submit',
+    (event) => {
+      event.preventDefault();
+
+      const location = event.target['park-area'].value;
+      const thrillLevel = event.target['thrill-level'].value;
+
+      const predicate = new Predicate(location, thrillLevel);
+
+      resultManager.generateResults(predicate);
+
+      window.location.assign('./results.html');
+    },
+);
