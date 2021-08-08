@@ -38,26 +38,52 @@ const ResultManager = function(
     return randomizeResult(this);
 
     /**
+     * @param {ResultManager} context
      * @returns {Result}
      */
     function randomizeResult(context) {
-      let value = context._result;
+      let result = context._result;
       let arr = [];
+      let ride;
+      let tries = 0;
 
-      let randomInt;
-      let randomInts = [];
+      let randomIndices = [];
+      // keep trying if we don't have a ride
       do {
-        randomInt = CommonLib.Random.getRandomIntInclusive(0,
-            context._result.activities.length - 1);
-        if (!randomInts.includes(randomInt)) randomInts.push(randomInt);
-      } while (randomInts.length < 3);
+        // for each predicate-matching activity
+        randomIndices.length = 0;
+        arr.length = 0;
+        for (let i = 0; i < result.activities.length && randomIndices.length < 3; i++) {
 
-      for (const i of randomInts) {
-        const newElement = context._result.activities[i];
-        arr.push(newElement);
-      }
+          // get random index
+          const randomInt = CommonLib.Random.getRandomIntInclusive(
+              0, result.activities.length - 1);
 
-      return new Result(arr, value.predicate);
+          // add to randomIndices array
+          if (randomIndices.includes(randomInt)){
+            i--;
+            continue;
+          }
+          randomIndices.push(randomInt);
+
+          if (result.activities[randomInt].thrillLevel !==
+              CommonLib.Constants.THRILL_LEVEL_SHOPPING_OR_RESTAURANT) {
+            ride = result.activities[randomInt];
+          }
+        }
+
+        // use the random indices to pick the activities
+        for (const randomIndex of randomIndices) {
+          const randomActivity = result.activities[randomIndex];
+          arr.push(randomActivity);
+        }
+
+        // there may be actually no rides...
+        // try 10 times
+        tries++;
+      } while (!ride && tries < 10);
+
+      return new Result(arr, result.predicate);
     }
   };
 
@@ -75,6 +101,11 @@ const ResultManager = function(
 
   };
 
+  /**
+   * @param {ResultManager} context
+   * @param {number} target
+   * @param {Result} result
+   */
   function ensureTargetNumberOfResults(context, target, result) {
     // when we don't even have 3 results
     // we need the remaining 1 or 2 to be in the result set
