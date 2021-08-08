@@ -46,8 +46,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'thrillLevel': 'LOW',
     },
     {
-      'title': 'Tropical Hideaway Merchandise Collection',
-      'shortDescription': 'Welcome to our tropical hideaway where blue skies and gentle breezes never end - and summer is the ultimate escape from the everyday grind!',
+      'title': 'The Tropical Hideaway',
+      'shortDescription': 'Escape to an amazing jungle oasis offering fast \'n\'easy fare with a sense of adventure in the air!',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/adventureland-tropical-hidaway.jpg',
@@ -55,11 +55,11 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'thrillLevel': '*',
     },
     {
-      'title': 'The Tropical Hideaway',
-      'shortDescription': 'Escape to an amazing jungle oasis offering fast \'n\'easy fare with a sense of adventure in the air!',
+      'title': 'Tropical Hideaway Merchandise Collection',
+      'shortDescription': 'Welcome to our tropical hideaway where blue skies and gentle breezes never end - and summer is the ultimate escape from the everyday grind!',
       'adaFriendly': '',
       'originalRide': '',
-      'imageUrl': 'img/adventureland-tropical-hidaway.jpg',
+      'imageUrl': 'img/adventureland-tropical-hideaway-merch-collection.jpg',
       'location': 'adventureland',
       'thrillLevel': '*',
     },
@@ -584,7 +584,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
     },
 
     {
-      'title': 'OOOPS...Something when wrong.',
+      'title': 'OOOPS...Something went wrong.',
       'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
       'adaFriendly': '',
       'originalRide': '',
@@ -593,7 +593,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'thrillLevel': '404',
     },
     {
-      'title': 'OOOPS...Something when wrong.',
+      'title': 'OOOPS...Something went wrong.',
       'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
       'adaFriendly': '',
       'originalRide': '',
@@ -602,7 +602,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'thrillLevel': '404',
     },
     {
-      'title': 'OOOPS...Something when wrong.',
+      'title': 'OOOPS...Something went wrong.',
       'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
       'adaFriendly': '',
       'originalRide': '',
