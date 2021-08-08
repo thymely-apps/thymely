@@ -2,6 +2,9 @@
 
 const ActivityTests = {
 
+  Cleanup: function() {
+  },
+
   Factories: function() {
     QUnit.test(
         'Activity domain entity\'s constructor ' +
@@ -32,5 +35,6 @@ const ActivityTests = {
 
   Run: function() {
     ActivityTests.Factories();
+    ActivityTests.Cleanup();
   },
 };

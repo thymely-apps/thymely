@@ -10,64 +10,69 @@ const Repository = function(storageKey) {
   /** @type {string} */
   this.STORAGE_KEY = storageKey;
 
-  /** @type {Set<any>} */
-  this._inMemoryBacking = new Set();
+  /** @type {*[]} */
+  this._dataBacking = [];
 
   /**
    * @param {any} obj
    */
   Repository.prototype.add = function(obj) {
-    this._inMemoryBacking.add(obj);
-
-    this.store();
+    if (!this._dataBacking.includes(obj)) {
+      this._dataBacking.push(obj);
+      this.store();
+    }
   };
 
   /**
    * @param {Predicate} predicate
-   * @returns {Set<any>}
+   * @returns {*[]}
    */
   Repository.prototype.get = function(predicate) {
-    if (!predicate) return this._inMemoryBacking;
+    if (!predicate) return this._dataBacking;
 
-    let result = new Set();
-    for (const value of this._inMemoryBacking.entries()) {
-      if (predicate.filter(value[1])) {
-        result.add(value[1]);
+    let result = [];
+
+    for (const element of this._dataBacking) {
+      if (predicate.filter(element)) {
+        result.push(element);
       }
-      else result.add(new Predicate(' ', ' '));
     }
 
     return result;
   };
 
   /**
-   * @param {any} repositoryJson
-   */
-  Repository.prototype.addJson = function(repositoryJson) {
-    const obj = JSON.parse(repositoryJson);
-
-    if (typeof obj === typeof []) obj.forEach(
-        _ => this._inMemoryBacking.add(_));
-    else this._inMemoryBacking.add(obj);
-
-    this.store();
-  };
-
-  /**
    * @returns {void}
    */
   Repository.prototype.load = function() {
-    const valueFromStorage = CommonLib.Persistence.load(this.STORAGE_KEY);
-    if (!valueFromStorage || Object.keys(valueFromStorage).length < 1) return;
-    this._inMemoryBacking.add(valueFromStorage);
+    const valueFromStorage = localStorage.getItem(this.STORAGE_KEY);
+    const parsedValueFromStorage = JSON.parse(valueFromStorage) ?? [];
+
+    if (storageIsEmpty()) return;
+
+    // clear stale in memory storage
+    this._dataBacking = [];
+
+    // load the localstorage value into memory storage
+    this._dataBacking.push(...parsedValueFromStorage);
+
+    function storageIsEmpty() {
+      const isEmptyObject = Object.keys(parsedValueFromStorage).length < 1;
+      return !parsedValueFromStorage || isEmptyObject;
+    }
   };
 
   /**
    * @returns {void}
    */
   Repository.prototype.store = function() {
-    const jsonString = JSON.stringify(Array.from(this._inMemoryBacking));
-    if (!jsonString || jsonString === JSON.stringify({})) return;
-    CommonLib.Persistence.store(this.STORAGE_KEY, jsonString);
+    const jsonString = JSON.stringify(this._dataBacking);
+
+    localStorage.setItem(this.STORAGE_KEY, jsonString);
   };
+
+  Repository.prototype.clear = function(){
+    this._dataBacking = [];
+    this.store();
+  }
 };

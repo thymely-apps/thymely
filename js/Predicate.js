@@ -18,9 +18,8 @@ const Predicate = function(
    * @returns {boolean}
    */
   Predicate.prototype.filter = function(activity) {
-    const isLocationMatch = (activity.location?.toLowerCase() === this.location) > 0;
-    const isThrillLevelMatch = (activity.thrillLevel?.toLowerCase() === this.thrillLevel) >
-        0;
+    const isLocationMatch = activity.location.toUpperCase() === this.location.toUpperCase();
+    const isThrillLevelMatch = activity.thrillLevel.toUpperCase() === this.thrillLevel.toUpperCase();
 
     return isLocationMatch && isThrillLevelMatch;
   };

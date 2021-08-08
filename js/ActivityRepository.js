@@ -8,14 +8,14 @@ const ActivityRepository = function(storageKey = 'Activities') {
   /** @type {Repository} */
   this.activities = new Repository(storageKey);
 
-  this.activities._inMemoryBacking = new Set([
+  this.activities._dataBacking = [
     {
       'title': 'Indiana Jones™ Adventure',
       'shortDescription': 'Embark on a fast-paced thrill ride in search of Indiana Jones—enter this cursed temple at your own risk!',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/adventureland-indiana-jones.jpg',
-      'location': 'Adventureland',
+      'location': 'adventureland',
       'thrillLevel': 'HIGH',
     },
     {
@@ -24,7 +24,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/adventureland-tarzan-tree.jpg',
-      'location': 'Adventureland',
+      'location': 'adventureland',
       'thrillLevel': 'LOW',
     },
     {
@@ -33,7 +33,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/adventureland-jungle-cruise.jpg',
-      'location': 'Adventureland',
+      'location': 'adventureland',
       'thrillLevel': 'LOW',
     },
     {
@@ -42,7 +42,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '',
       'imageUrl': 'img/adventureland-tiki-room.jpg',
-      'location': 'Adventureland',
+      'location': 'adventureland',
       'thrillLevel': 'LOW',
     },
 
@@ -52,7 +52,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/critter-country-splash-mountain.jpg',
-      'location': 'Critter Country',
+      'location': 'critter-country',
       'thrillLevel': 'HIGH',
     }, {
       'title': 'Davy Crockett\'s Explorer Canoes',
@@ -60,15 +60,15 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/critter-country-davy-crockett-canoes.jpg',
-      'location': 'Critter Country',
-      'thrillLevel': 'MEDIUM',
+      'location': 'critter-country',
+      'thrillLevel': 'MODERATE',
     }, {
       'title': 'The Many Adventures of Winnie the Pooh',
       'shortDescription': 'Buzz through Hundred-Acre Wood in an oversized beehive and revisit beloved songs and scenes from Winnie the Pooh.',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/critter-country-winnie-the-pooh.jpg',
-      'location': 'Critter Country',
+      'location': 'critter-country',
       'thrillLevel': 'LOW',
     },
 
@@ -78,7 +78,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-natterhorn.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'HIGH',
     },
     {
@@ -87,8 +87,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/fantasyland-peter-pan.jpg',
-      'location': 'Fantasyland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'fantasyland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Casey Jr. Circus Train',
@@ -96,7 +96,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/fantasyland-caseyjr-train.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -105,7 +105,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-dumbo.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -114,7 +114,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/fantasyland-small-world.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -123,8 +123,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-teacup.jpg',
-      'location': 'Fantasyland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'fantasyland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Pinocchio\'s Daring Journey',
@@ -132,7 +132,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-pinocchio.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -141,7 +141,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-alice-in-wonder.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -150,7 +150,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/fantasyland-mrtoad.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -159,7 +159,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/fantasyland-carrousel.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -168,7 +168,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-sleeping-beauty.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
     {
@@ -177,7 +177,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/fantasyland-small-world.jpg',
-      'location': 'Fantasyland',
+      'location': 'fantasyland',
       'thrillLevel': 'LOW',
     },
 
@@ -187,7 +187,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '',
       'imageUrl': 'img/frontierland-thunder-mountain.jpg',
-      'location': 'Frontierland',
+      'location': 'frontierland',
       'thrillLevel': 'HIGH',
     },
 
@@ -197,8 +197,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '',
       'imageUrl': 'img/frontierland-tom-sawyer.jpg',
-      'location': 'Frontierland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'frontierland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Sailing Ship Columbia',
@@ -206,8 +206,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/frontierland-columbia.jpg',
-      'location': 'Frontierland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'frontierland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Mark Twain Riverboat',
@@ -215,7 +215,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/frontierland-mark-twain.jpg',
-      'location': 'Frontierland',
+      'location': 'frontierland',
       'thrillLevel': 'LOW',
     },
     {
@@ -224,8 +224,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/toontown-gadget-coaster.jpg',
-      'location': 'Mickey\'s Toontown',
-      'thrillLevel': 'MEDIUM',
+      'location': 'toontown',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Roger Rabbit\'s Car Toon Spin',
@@ -233,8 +233,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/toontown-roger-rabbit.jpg',
-      'location': 'Mickey\'s Toontown',
-      'thrillLevel': 'MEDIUM',
+      'location': 'toontown',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'The Disney Gallery',
@@ -242,7 +242,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/main-street-disney-gallery.jpg',
-      'location': 'Main Street, U.S.A.',
+      'location': 'main-street',
       'thrillLevel': 'LOW',
     },
 
@@ -252,7 +252,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '',
       'imageUrl': 'img/main-street-mr-lincoln.jpg',
-      'location': 'Main Street, U.S.A.',
+      'location': 'main-street',
       'thrillLevel': 'LOW',
     },
     {
@@ -261,7 +261,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/main-street-vehicles.jpg',
-      'location': 'Main Street, U.S.A.',
+      'location': 'main-street',
       'thrillLevel': 'LOW',
     },
     {
@@ -270,7 +270,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/main-street-cinema.jpg',
-      'location': 'Main Street, U.S.A.',
+      'location': 'main-street',
       'thrillLevel': 'LOW',
     },
     {
@@ -279,7 +279,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': 'ADA Friendly',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/main-street-disneyland-express.jpg',
-      'location': 'Main Street, U.S.A.',
+      'location': 'main-street',
       'thrillLevel': 'LOW',
     },
     {
@@ -288,8 +288,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/new-orleans-square-pirates-caribbean.jpg',
-      'location': 'New Orleans Square',
-      'thrillLevel': 'MEDIUM',
+      'location': 'new-orleans-square',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Haunted Mansion',
@@ -297,8 +297,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/new-orleans-haunted-mansion.jpg',
-      'location': 'New Orleans Square',
-      'thrillLevel': 'MEDIUM',
+      'location': 'new-orleans-square',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Millennium Falcon: Smugglers Run',
@@ -306,7 +306,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/star-wars-millenium-falcon.jpg',
-      'location': 'Star Wars: Galaxy\'s Edge',
+      'location': 'star-wars',
       'thrillLevel': 'HIGH',
     },
     {
@@ -315,8 +315,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/star-wars-rise-resistance.jpg',
-      'location': 'Star Wars: Galaxy\'s Edge',
-      'thrillLevel': 'MEDIUM',
+      'location': 'star-wars',
+      'thrillLevel': 'MODERATE',
     },
 
     {
@@ -325,8 +325,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-star-tours.jpg',
-      'location': 'Tomorrowland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'tomorrowland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Space Mountain',
@@ -334,7 +334,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-space-mountain.jpg',
-      'location': 'Tomorrowland',
+      'location': 'tomorrowland',
       'thrillLevel': 'HIGH',
     },
     {
@@ -343,7 +343,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-launchbay.jpg',
-      'location': 'Tomorrowland',
+      'location': 'tomorrowland',
       'thrillLevel': 'LOW',
     },
     {
@@ -352,7 +352,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '1955 Original Ride',
       'imageUrl': 'img/tomorrowland-autopia.jpg',
-      'location': 'Tomorrowland',
+      'location': 'tomorrowland',
       'thrillLevel': 'LOW',
     },
     {
@@ -361,8 +361,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-finding-nemo.jpg',
-      'location': 'Tomorrowland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'tomorrowland',
+      'thrillLevel': 'MODERATE',
     },
     {
       'title': 'Buzz Lightyear Astro Blasters',
@@ -370,7 +370,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-buzz-lightyear-astro.jpg',
-      'location': 'Tomorrowland',
+      'location': 'tomorrowland',
       'thrillLevel': 'LOW',
     },
     {
@@ -379,8 +379,8 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/tomorrowland-astro-orbiter.jpg',
-      'location': 'Tomorrowland',
-      'thrillLevel': 'MEDIUM',
+      'location': 'tomorrowland',
+      'thrillLevel': 'MODERATE',
     },
 
     {
@@ -388,11 +388,27 @@ const ActivityRepository = function(storageKey = 'Activities') {
       'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
       'adaFriendly': '',
       'originalRide': '',
-      'imageUrl': 'img/404-image.jpg',
-      'location': ' ',
-      'thrillLevel': ' ',
+      'imageUrl': 'img/404-image-1.jpg',
+      'location': '404',
+      'thrillLevel': '404',
     },
-  ]);
-
-  this.activities.store();
+    {
+      'title': 'OOOPS...Something when wrong.',
+      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
+      'adaFriendly': '',
+      'originalRide': '',
+      'imageUrl': 'img/404-image-2.jpg',
+      'location': '404',
+      'thrillLevel': '404',
+    },
+    {
+      'title': 'OOOPS...Something when wrong.',
+      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
+      'adaFriendly': '',
+      'originalRide': '',
+      'imageUrl': 'img/404-image-3.jpg',
+      'location': '404',
+      'thrillLevel': '404',
+    },
+  ];
 };

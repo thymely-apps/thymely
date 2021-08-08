@@ -90,46 +90,7 @@
     <script src="./js/ResultManager.js"></script>
   </div>
   <div id="thymely-homepage-imports-driver">
-  </div>
-  <div>
-    <script>
-      const summaryElement = document.getElementById('thymely-results').getElementsByTagName('p')[0];
-      const activityElementTitle = document.getElementById('thymely-activity').getElementsByTagName('h2')[0];
-      const activityElementDescription = document.getElementById('thymely-activity').getElementsByTagName('p')[0];
-      const activityElementImage = document.getElementById('thymely-activity').getElementsByTagName('img')[0];
-      const ride1ElementTitle = document.getElementById('thymely-ride1').getElementsByTagName('h2')[0];
-      const ride1ElementDescription = document.getElementById('thymely-ride1').getElementsByTagName('p')[0];
-      const ride1ElementImage = document.getElementById('thymely-ride1').getElementsByTagName('img')[0];
-      const ride2ElementTitle = document.getElementById('thymely-ride2').getElementsByTagName('h2')[0];
-      const ride2ElementDescription = document.getElementById('thymely-ride2').getElementsByTagName('p')[0];
-      const ride2ElementImage = document.getElementById('thymely-ride2').getElementsByTagName('img')[0];
-
-      const activityRepository = new ActivityRepository();
-      const result = activityRepository.activities.get(
-          new Predicate('Adventureland', CommonLib.Constants.THRILL_LEVEL_LOW));
-
-      const results = Array.from(result);
-      summaryElement.innerText = `First you'll be visiting ${results[0].title}. Next, you'll adventure to ${results[1].title}. You'll finish up your adventure at ${results[2].title}. We sincerely hope you enjoy our magical world!`;
-
-      activityElementTitle.innerText = results[0].title;
-      activityElementDescription.innerText = results[0].shortDescription;
-      activityElementImage.setAttribute('src', results[0].imageUrl);
-
-      ride1ElementTitle.innerText = results[1].title;
-      ride1ElementDescription.innerText = results[1].shortDescription;
-      ride1ElementImage.setAttribute('src', results[1].imageUrl);
-
-      ride2ElementTitle.innerText = results[2].title;
-      ride2ElementDescription.innerText = results[2].shortDescription;
-      ride2ElementImage.setAttribute('src', results[2].imageUrl);
-
-      document.getElementById('thymely-regen-button').addEventListener(
-          'click',
-          (e) => {
-            window.location.assign('./index.html');
-          },
-      );
-    </script>
+    <script src="./js/appResult.js"></script>
   </div>
 </div>
 </body>

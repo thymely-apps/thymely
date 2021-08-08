@@ -2,25 +2,40 @@
 
 const ResultManagerTests = {
 
+  Constants: {
+    TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_IMMUTABLE_CTOR: 'TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_IMMUTABLE_CTOR',
+    TEST_RESULT_MANAGER_RESULT_REPOSITORY_IMMUTABLE_CTOR: 'TEST_RESULT_MANAGER_RESULT_REPOSITORY_IMMUTABLE_CTOR',
+    TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_GENERATE: 'TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_GENERATE',
+    TEST_RESULT_MANAGER_RESULT_REPOSITORY_GENERATE: 'TEST_RESULT_MANAGER_RESULT_REPOSITORY_GENERATE',
+  },
+
   Factories: function() {
     QUnit.test(
         'ResultManager class constructor ' +
         'should not mutate properties on assignment ' +
         'when constructor is finished.', (assert) => {
-          const activityRepository = new ActivityRepository('TEST_RESULTMANAGER_ACTIVITYREPOSITORY_IMMUTABLE_CTOR');
-          const resultRepository = new ResultRepository('TEST_RESULTMANAGER_RESULTREPOSITORY_IMMUTABLE_CTOR');
+          const activityRepository = new ActivityRepository(
+              this.Constants.TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_IMMUTABLE_CTOR);
+          const resultRepository = new ResultRepository(
+              this.Constants.TEST_RESULT_MANAGER_RESULT_REPOSITORY_IMMUTABLE_CTOR);
+
           const actual = new ResultManager(
               activityRepository,
               resultRepository);
 
-          TestLib.Object.hasSamePropertiesAndValues(
+          TestLib.Value.isEqual(
               assert,
-              activityRepository,
-              actual.activityRepository);
-          TestLib.Object.hasSamePropertiesAndValues(
+              activityRepository.activities._dataBacking.length,
+              actual.activityRepository.activities._dataBacking.length);
+          TestLib.Value.isEqual(
               assert,
-              resultRepository,
-              actual.resultRepository);
+              resultRepository.results._dataBacking.length,
+              actual.resultRepository.results._dataBacking.length);
+
+          localStorage.removeItem(
+              this.Constants.TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_IMMUTABLE_CTOR);
+          localStorage.removeItem(
+              this.Constants.TEST_RESULT_MANAGER_RESULT_REPOSITORY_IMMUTABLE_CTOR);
         });
   },
 
@@ -31,27 +46,51 @@ const ResultManagerTests = {
         'when there are no results.', (assert) => {
 
           const activityRepository = new ActivityRepository(
-              'TEST_RESULTMANAGER_ACTIVITYREPOSITORY_GENERATE');
+              this.Constants.TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_GENERATE);
           const resultRepository = new ResultRepository(
-              'TEST_RESULTMANAGER_RESULTREPOSITORY_GENERATE');
+              this.Constants.TEST_RESULT_MANAGER_RESULT_REPOSITORY_GENERATE);
 
-          const sut = new ResultManager(
+          const resultManager = new ResultManager(
               activityRepository,
               resultRepository);
           const predicate = new Predicate(
-              '!space-mountain?',
-              CommonLib.Constants.THRILL_LEVEL_LOW);
+              '!unmatched',
+              'unmatched');
 
-          const expected = 3;
-          const actual = sut.generateResults(predicate).activities.size;
+          const expectedLength = 3;
+          /** @type {Activity[]} */
+          const expectedResults = activityRepository.activities.get(
+              new Predicate('404', '404'));
+          const expectedResultA = expectedResults[0];
+          const expectedResultB = expectedResults[1];
+          const expectedResultC = expectedResults[2];
+
+          /** @type {Result} */
+          resultManager.generateResults(predicate);
+          const actualResults = resultManager.resultRepository.results.get()[0].activities;
+          const actualLength = actualResults.length;
+          const actualResultA = actualResults[0];
+          const actualResultB = actualResults[1];
+          const actualResultC = actualResults[2];
 
           TestLib.Value.isEqual(
               assert,
-              expected,
-              actual);
-          TestLib.Value.isTrue(
+              expectedResultA.title,
+              'OOOPS...Something when wrong.');
+          TestLib.Value.isEqual(
               assert,
-              typeof actual[0] === typeof Result);
+              expectedResultB.title,
+              'OOOPS...Something when wrong.');
+          TestLib.Value.isEqual(
+              assert,
+              expectedResultC.title,
+              'OOOPS...Something when wrong.');
+          TestLib.Value.isEqual(assert, expectedLength, actualLength);
+
+          localStorage.removeItem(
+              this.Constants.TEST_RESULT_MANAGER_ACTIVITY_REPOSITORY_GENERATE);
+          localStorage.removeItem(
+              this.Constants.TEST_RESULT_MANAGER_RESULT_REPOSITORY_GENERATE);
         });
   },
 

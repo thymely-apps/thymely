@@ -2,6 +2,9 @@
 
 const ResultTests = {
 
+  Cleanup: function(){
+  },
+
   Factories: function() {
     QUnit.test(
         'Result class constructor ' +
@@ -32,7 +35,7 @@ const ResultTests = {
                 '___ franchise',
                 '___ thrillLevel',
                 '___ activityLevel')];
-          const actual = new Result(expected).activities;
+          const actual = new Result(expected, new Predicate('','')).activities;
 
           TestLib.Object.hasSamePropertiesAndValues(assert, expected, actual);
         });
@@ -40,5 +43,6 @@ const ResultTests = {
 
   Run: function() {
     ResultTests.Factories();
+    ResultTests.Cleanup();
   },
 };

@@ -1,78 +1,43 @@
 'use strict';
 
-// const activityRepository = new ActivityRepository();
+/* Dependencies */
+
+const activityRepository = new ActivityRepository();
 const resultRepository = new ResultRepository();
+const resultManager = new ResultManager(activityRepository, resultRepository);
 
-// function randomizeResults(results) {
-//   let result = new Set();
-//   let tryCount = 0;
-//
-//   while (result.size < 3 && tryCount < 3) {
-//     let r = results[CommonLib.Random.getRandomIntInclusive(0,
-//         results.length)];
-//     if (r) result.add(r);
-//     // else {
-//     //   r = this.activityRepository.activities.get(new Predicate(' ', ' '));
-//     // }
-//
-//     result.add(r);
-//     this.resultRepository.add(r);
-//     tryCount++;
-//   }
-//
-//   return result;
-// }
+/*  Page Elements  */
 
-const results = Array.from(resultRepository.results.get());
+const results = resultManager.getResults();
+const summaryElement = document.getElementById('thymely-results');
+const activityElement = document.getElementById('thymely-activity');
+const ride1Element = document.getElementById('thymely-ride1');
+const ride2Element = document.getElementById('thymely-ride2');
 
-const summaryElement = document.getElementById('thymely-results').
-    getElementsByTagName('p')[0];
-const activityElementTitle = document.getElementById('thymely-activity').
-    getElementsByTagName('h2')[0];
-const activityElementDescription = document.getElementById('thymely-activity').
-    getElementsByTagName('p')[0];
-const activityElementImage = document.getElementById('thymely-activity').
-    getElementsByTagName('img')[0];
-const ride1ElementTitle = document.getElementById('thymely-ride1').
-    getElementsByTagName('h2')[0];
-const ride1ElementDescription = document.getElementById('thymely-ride1').
-    getElementsByTagName('p')[0];
-const ride1ElementImage = document.getElementById('thymely-ride1').
-    getElementsByTagName('img')[0];
-const ride2ElementTitle = document.getElementById('thymely-ride2').
-    getElementsByTagName('h2')[0];
-const ride2ElementDescription = document.getElementById('thymely-ride2').
-    getElementsByTagName('p')[0];
-const ride2ElementImage = document.getElementById('thymely-ride2').
-    getElementsByTagName('img')[0];
+setSummaryText();
+setElement(activityElement, results.activities[0]);
+setElement(ride1Element, results.activities[1]);
+setElement(ride2Element, results.activities[2]);
 
-// const result = activityRepository.activities.get(
-//     new Predicate(
-//         'Critter Country',
-//         CommonLib.Constants.THRILLLEVELLOW));
+/* Functions */
 
-summaryElement.innerText =
-    results[0].title + results[1].title + results[2].title;
+function setSummaryText() {
+  summaryElement.getElementsByTagName('p')[0].innerText =
+      `Your adventure starts at ${results.activities[0].title}. ` +
+      `Next, you'll visit ${results.activities[1].title}. ` +
+      `And finally, you'll go to ${results.activities[2].title}. ` +
+      'We sincerely hope you enjoy our magical world!';
+}
 
-activityElementTitle.innerText = results[0].title;
-activityElementDescription.innerText = results[0].shortDescription;
-activityElementImage.setAttribute('src', results[0].imageUrl);
+function setElement(element, activity) {
+  element.getElementsByTagName('h2')[0].innerText = activity.title;
+  element.getElementsByTagName('p')[0].innerText = activity.shortDescription;
+  element.getElementsByTagName('img')[0].setAttribute('src', activity.imageUrl);
+}
 
-ride1ElementTitle.innerText = results[1].title;
-ride1ElementDescription.innerText = results[1].shortDescription;
-ride1ElementImage.setAttribute('src', results[1].imageUrl);
-
-ride2ElementTitle.innerText = results[2].title;
-ride2ElementDescription.innerText = results[2].shortDescription;
-ride2ElementImage.setAttribute('src', results[2].imageUrl);
-
-// (function handleSubmitButtonClick() {
-//   document.addEventListener(
-//       'submit',
-//       (e) => {
-//         const predicate = CommonLib.Event.getSubmitButtonClickDelegate(e);
-//         results = Array.from(resultRepository.activities.get(predicate));
-//         window.location.assign('./results.html');
-//       },
-//   );
-// })();
+document.getElementById('thymely-regen-button').addEventListener(
+    'click',
+    (e) => {
+      window.location.assign('./index.html');
+    },
+);
