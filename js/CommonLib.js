@@ -7,6 +7,7 @@ const CommonLib = {
     THRILL_LEVEL_HIGH: 'HIGH',
     THRILL_LEVEL_MEDIUM: 'MODERATE',
     THRILL_LEVEL_LOW: 'LOW',
+    THRILL_LEVEL_SHOPPING_OR_RESTAURANT: '*',
   },
 
   Array: {
