@@ -530,7 +530,12 @@ color: #6F62D0;
   color: #8DA487; 
 }
 
-#thymely-results-page img {
+#thymely-results img{
+  width: 40%;
+  margin-left: 20%;
+}
+
+#thymely-activity img, #thymely-ride1 img, #thymely-ride2 img{
   width: 80%;
   border: 8px solid #38326A;
   border-radius: 8px;
@@ -539,7 +544,7 @@ color: #6F62D0;
   transition: transform 1s;
 }
 
-#thymely-results-page img:hover {
+#thymely-activity img:hover, #thymely-ride1 img:hover, #thymely-ride2 img:hover {
   transform: scale(1.1);
   border: 8px solid #6F62D0;
   border-radius: 8px;
