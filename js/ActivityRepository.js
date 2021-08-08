@@ -585,7 +585,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
 
     {
       'title': 'OOOPS...Something went wrong.',
-      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
+      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help us create one.',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/404-image-1.jpg',
@@ -594,7 +594,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
     },
     {
       'title': 'OOOPS...Something went wrong.',
-      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
+      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help us create one.',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/404-image-2.jpg',
@@ -603,7 +603,7 @@ const ActivityRepository = function(storageKey = 'Activities') {
     },
     {
       'title': 'OOOPS...Something went wrong.',
-      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help up create one.',
+      'shortDescription': 'Hmmm....Looks like we don\'t have a ride to fit that description. Become an Imagineer and help us create one.',
       'adaFriendly': '',
       'originalRide': '',
       'imageUrl': 'img/404-image-3.jpg',
