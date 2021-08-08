@@ -228,7 +228,7 @@ form {
 }
 
 fieldset {
-  width: 480px;
+  width: 100%;
   border: 8px solid #38326A;
   border-radius: 8px;
   padding:50px;
@@ -259,8 +259,6 @@ select {
 select:active, select:hover {
   background-color: #cec7ff;
   cursor: pointer;
-  animation: wiggle 2s ease;
-  animation-iteration-count: 1;  
 }
 
 @keyframes wiggle {
@@ -309,7 +307,7 @@ label:hover {
   font-family: 'Oswald', sans-serif;
   font-size: 18pt;
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 80px;
   width: 60%;
   transition:all 0.8s ease;
   transition:margin-top 0.8s ease;
@@ -317,14 +315,14 @@ label:hover {
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
 
-#thymely-form button:focus, #thymely-form button:hover {
+#thymely-form button:hover, #thymely-form button:hover {
   /*Disneys secret green color*/
   background-color: #8DA487; 
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
   border-radius:50%;
   width:150px;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 28px;
   cursor: pointer;
 } 
