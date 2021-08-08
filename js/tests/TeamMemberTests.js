@@ -2,6 +2,9 @@
 
 const TeamMemberTests = {
 
+  Cleanup: function(){
+  },
+
   Factories: function() {
     QUnit.test(
         'TeamMember class constructor ' +
@@ -26,5 +29,6 @@ const TeamMemberTests = {
 
   Run: function() {
     TeamMemberTests.Factories();
+    TeamMemberTests.Cleanup();
   },
 };

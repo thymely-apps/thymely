@@ -1,6 +1,10 @@
 'use strict';
 
 const CommonLibTests = {
+
+  Cleanup: function(){
+  },
+
   ArrayTests: function() {
     QUnit.test(
         'CommonLib.Array.contains helper ' +
@@ -41,5 +45,6 @@ const CommonLibTests = {
 
   Run: function() {
     CommonLibTests.ArrayTests();
+    CommonLibTests.Cleanup();
   },
 };
