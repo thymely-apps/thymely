@@ -235,7 +235,7 @@ fieldset {
   text-align: left;
   background-color: #6F62D0;
   cursor: pointer;
-  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  box-shadow: 8px 10px 8px #a7a6a6;
 }
 
 select {
@@ -291,6 +291,7 @@ label {
   margin-left: 15px;
   color: #d0b6eb;
   transition:all 1s ease;
+  cursor: pointer;
 }
 
 label:hover {
@@ -309,8 +310,7 @@ label:hover {
   margin-bottom: 20px;
   margin-top: 80px;
   width: 60%;
-  transition:all 0.8s ease;
-  transition:margin-top 0.8s ease;
+  transition:all 1s ease;
   cursor: pointer;
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
@@ -320,11 +320,6 @@ label:hover {
   background-color: #8DA487; 
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
-  border-radius:50%;
-  width:150px;
-  margin-top: 40px;
-  padding: 28px;
-  cursor: pointer;
 } 
 
 /* ----------------------------about.html ---------------------------------*/
@@ -406,20 +401,25 @@ color: #6F62D0;
   color: #8DA487; 
 }
 
+#thymely-about-section h3{
+  display: inline;
+}
+
 #thymely-about-section h3 a{
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   font-size: 100%;
   margin-bottom: 1%;
   letter-spacing: 1px;
-  color:#4E4E4E;
+  color:#6F62D0;;
   margin-left: 2%;
   transition:all 0.5s ease;
 }
 
 #thymely-about-section h3 a:hover {
-  color: #6F62D0;
+  color: #c0b8ff;
 }
+
 
 #thymely-about-articles p {
   font-family: 'Montserrat', sans-serif;
@@ -534,7 +534,7 @@ color: #6F62D0;
   width: 80%;
   border: 8px solid #38326A;
   border-radius: 8px;
-  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  box-shadow: 8px 10px 8px #a7a6a6;
   transition:all 1s ease;
   transition: transform 1s;
 }
@@ -570,8 +570,7 @@ color: #F5C3AE;
   margin-bottom: 10%;
   margin-top: 6%;
   width: 14%;
-  transition:all 0.8s ease;
-  transition:margin-top 0.8s ease;
+  transition:all 1s ease;
 }
 
 #thymely-results-page button:focus, #thymely-results-page button:hover {
@@ -579,10 +578,7 @@ color: #F5C3AE;
   background-color: #8DA487; 
   border: 8px solid #4d5a4a;
   color: #E3E3E3;
-  border-radius:50%;
-  margin-top: 20px;
-  padding: 25px;
-  width:150px;
+
 } 
 
 /* ------------------------------Footer ---------------------------------*/
