@@ -54,7 +54,7 @@ const PredicateTests = {
         'when the predicate matches 404 for location and thrill level.',
         (assert) => {
           // ARRANGE
-          const expectedTitle = 'OOOPS...Something when wrong.';
+          const expectedTitle = 'OOOPS...Something went wrong.';
           const expectedSize = 3;
           const repo = new ActivityRepository(
               this.Constants.TEST_PREDICATE_RETURN_VALUE);
