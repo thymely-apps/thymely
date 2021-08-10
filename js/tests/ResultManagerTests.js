@@ -76,15 +76,15 @@ const ResultManagerTests = {
           TestLib.Value.isEqual(
               assert,
               expectedResultA.title,
-              'OOOPS...Something when wrong.');
+              'OOOPS...Something went wrong.');
           TestLib.Value.isEqual(
               assert,
               expectedResultB.title,
-              'OOOPS...Something when wrong.');
+              'OOOPS...Something went wrong.');
           TestLib.Value.isEqual(
               assert,
               expectedResultC.title,
-              'OOOPS...Something when wrong.');
+              'OOOPS...Something went wrong.');
           TestLib.Value.isEqual(assert, expectedLength, actualLength);
 
           localStorage.removeItem(
