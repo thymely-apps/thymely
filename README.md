@@ -232,3 +232,53 @@ Feature Tasks
 - Give user option to refresh page with new results
 - Acceptance Tests
 - Two unique rides should render to the page 
+
+# Resources
+
+## Textbooks
+
+- Jon Duckett, HTML & CSS, John Wiley & Sons, Inc., ©2011
+
+- Jon Duckett, JavaScript & JQuery, John Wiley & Sons, Inc., ©2014
+
+## Websites
+
+- [W3Schools](https://www.w3schools.com/)
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+
+- [CSS-Tricks](https://css-tricks.com/)
+
+- [Designspiration](https://www.designspiration.com/)
+
+## Images
+
+- [Unsplash](https://unsplash.com/)
+
+- [Canva](https://www.canva.com/)
+
+- [Google Images with Creative Commons Licensing](https://images.google.com/imghp?hl=en&gl=ar&gws_rd=ssl)
+
+- [Pexels](https://www.pexels.com/)
+
+- [Flickr](https://www.flickr.com/)
+
+## Custom Google Fonts
+
+- [Oswald](https://fonts.google.com/specimen/Oswald?query=os)
+
+- [Montserrat](https://fonts.google.com/specimen/Montserrat?query=Montserrat)
+
+## .gitignore
+
+- [.gitignore Code](https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows,visualstudiocode)
+
+## CSS Reset
+
+- [Eric Meyer’s CSS Reset Code](https://meyerweb.com/eric/tools/css/reset/)
+
+## eslintrc.json
+
+- [eslintrc.json Code](https://github.com/codefellows/seattle-code-201d77/blob/main/configs/eslintrc.json)
+
+
